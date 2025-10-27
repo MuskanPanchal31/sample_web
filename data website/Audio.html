@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audio Annotation Services</title>
+ 
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+ 
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+    color: #333;
+    overflow-x: hidden;
+  }
+ 
+  /* HERO SECTION */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 20px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  .hero-left { flex: 1 1 300px; }
+  .hero-left h1 { font-size: 2.5rem; color: #1a237e; margin-bottom: 15px; }
+  .hero-left p { font-size: 1rem; line-height: 1.6; }
+  .hero-right { flex: 1 1 300px; text-align: center; }
+  .hero-right img { border-radius: 20px; max-width: 100%; }
+ 
+  /* SECTION TITLE */
+  section { text-align: center; padding: 60px 20px; }
+  section h1 { font-size: 2rem; font-weight: 800; margin-bottom: 20px; color: #1a237e; }
+  section p { max-width: 800px; margin: 0 auto 40px; font-size: 1rem; line-height: 1.6; }
+ 
+  /* CARD LAYOUT (side-by-side) */
+  .card-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    background: #fff;
+    border-radius: 20px;
+    margin: 30px auto;
+    max-width: 1100px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.4s ease;
+  }
+  .card-row:hover { transform: scale(1.02); }
+ 
+  .card-row img {
+    width: 50%;
+    height: auto;
+    object-fit: cover;
+  }
+  .card-content {
+    flex: 1;
+    padding: 30px;
+    text-align: left;
+  }
+  .card-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #1a237e;
+  }
+  .card-content p {
+    font-size: 1rem;
+    color: #555;
+  }
+ 
+  /* Alternate layout for even cards */
+  .card-row:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+ 
+  /* WORKFLOW SECTION */
+  .workflow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .workflow-step {
+    background: linear-gradient(135deg, #d1c4e9, #b39ddb);
+    color: #1a237e;
+    border-radius: 15px;
+    padding: 25px;
+    flex: 1 1 220px;
+    max-width: 230px;
+    text-align: center;
+    position: relative;
+    transition: all 0.4s ease;
+    overflow: hidden;
+  }
+  .workflow-step i {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #1a237e;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  .workflow-step:hover {
+    background: linear-gradient(135deg, #5c6bc0, #3949ab);
+    color: #fff;
+    transform: translateY(-10px);
+  }
+  .workflow-step:hover i { color: #fff; transform: scale(1.3); }
+ 
+  /* Connecting line */
+  .workflow-step::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: -30px;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(to right, #b39ddb, #5c6bc0);
+    transform: translateY(-50%);
+  }
+  .workflow-step:last-child::after { display: none; }
+ 
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .card-row { flex-direction: column !important; }
+    .card-row img { width: 100%; }
+    .card-content { text-align: center; }
+    .workflow-step::after { display: none; }
+  }
+</style>
+</head>
+ 
+<body>
+ 
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-left">
+      <h1>Professional Audio Annotation</h1>
+      <p>High-quality audio labeling for AI & ML models. We handle video audio, speech, paired audio, and call recordings with precision and consistency.</p>
+  </div>
+  <div class="hero-right">
+    <img src="Audio image/audio2.jpg" alt="Audio Annotation Illustration">
+  </div>
+</div>
+ 
+<!-- TYPES OF AUDIO ANNOTATION -->
+<section>
+  <h1>Types of Audio Annotation</h1>
+  <p>We annotate different audio sources to provide structured data for AI model training.</p>
+ 
+  <div class="card-row">
+    <img src="Audio image/vdo.jpg" alt="Video Audio">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-video"></i> Video Audio</h3>
+      <p>Extract and annotate audio from videos including dialogues, background sounds, and overlapping voices.</p>
+    </div>
+  </div>
+ 
+  <div class="card-row">
+    <img src="Audio image/image 1.jpeg" alt="Speech Audio">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-microphone"></i> Speech Audio</h3>
+      <p>Label spoken words, identify speakers, and add emotion tags for ASR and sentiment analysis.</p>
+    </div>
+  </div>
+ 
+  <div class="card-row">
+    <img src="Audio image/" alt="Paired Audio">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-user-group"></i> Paired Audio</h3>
+      <p>Annotate dialogues, multi-speaker interactions, and call-and-response audio for conversational AI.</p>
+    </div>
+  </div>
+ 
+  <div class="card-row">
+    <img src="Audio image/audio call.png" alt="Call Recording Audio">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-phone"></i> Call Recording Audio</h3>
+      <p>Transcribe, tag, and label call center or support calls for AI analytics.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- WORKFLOW SECTION -->
+<section>
+  <h1>Our Audio Annotation Workflow</h1>
+  <p>We follow a structured process to ensure precise and consistent annotation for every dataset.</p>
+ 
+  <div class="workflow">
+    <div class="workflow-step">
+      <i class="fa-solid fa-file-audio"></i>
+      <h4>Audio Collection</h4>
+      <p>Collect raw audio from video, speech, calls, or paired interactions.</p>
+    </div>
+ 
+    <div class="workflow-step">
+      <i class="fa-solid fa-pencil"></i>
+      <h4>Labeling & Tagging</h4>
+      <p>Annotate with speaker info, timestamps, and context using structured labels.</p>
+    </div>
+ 
+    <div class="workflow-step">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h4>Quality Review</h4>
+      <p>Cross-check annotations for accuracy, consistency, and completeness.</p>
+    </div>
+ 
+    <div class="workflow-step">
+      <i class="fa-solid fa-check-circle"></i>
+      <h4>Final Delivery</h4>
+      <p>Deliver ready-to-use structured datasets for AI and ML applications.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- ADDITIONAL BENEFITS SECTION -->
+<section>
+  <h1>Why Choose Our Audio Annotation</h1>
+  <p>High-quality, consistent, and reliable audio annotation for AI & ML applications.</p>
+ 
+  <div class="card-row">
+    <img src="Audio image/fast.jpg" alt="Fast & Efficient">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-bolt"></i> Fast & Efficient</h3>
+      <p>Quick turnaround with accurate labeling for large datasets.</p>
+    </div>
+  </div>
+ 
+  <div class="card-row">
+    <img src="Audio image/" alt="Secure">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-shield"></i> Secure</h3>
+      <p>Data privacy and confidentiality maintained throughout the annotation process.</p>
+    </div>
+  </div>
+ 
+  <div class="card-row">
+    <img src="" alt="High Accuracy">
+    <div class="card-content">
+      <h3><i class="fa-solid fa-star"></i> High Accuracy</h3>
+      <p>Expert team with rigorous review and validation for all annotated data.</p>
+    </div>
+  </div>
+</section>
+ 
+</body>
+</html>
+ 
+ 

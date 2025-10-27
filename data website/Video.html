@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🎥 Video Annotation Project</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+       color: #fff;
+      line-height: 1.6;
+      padding: 30px 0;
+    }
+
+    section {
+      width: 90%;
+      margin: 50px auto; /* space between each section */
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-5px);
+    }
+
+    /* === SECTION 1 === */
+    .intro {
+      background: linear-gradient(135deg, #1e3c72, #2a5298, #ff416c);
+      padding: 60px 40px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .intro-text {
+      flex: 1 1 45%;
+      max-width: 500px;
+    }
+
+    .intro-text h1 {
+      color: #ffb703;
+      font-size: 36px;
+      margin-bottom: 15px;
+    }
+
+    .intro-text p {
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+
+    .intro-text button {
+      background: linear-gradient(90deg, #ffb703, #ff9100);
+      border: none;
+      color: #000;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .intro-text button:hover {
+      transform: scale(1.05);
+    }
+
+    .intro-images {
+      flex: 1 1 45%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .intro-images img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      transition: transform 0.3s;
+    }
+
+    .intro-images img:hover {
+      transform: scale(1.05);
+    }
+
+    /* === SECTION 2 === */
+    .tasks {
+      background: linear-gradient(135deg, #0076b69c, #00b4d8, #90e0ef);
+      padding: 70px 30px;
+      text-align: center;
+      color: #022b3a;
+    }
+
+    .tasks h2 {
+      font-size: 30px;
+      color: #ffb703;
+      margin-bottom: 50px;
+    }
+
+    .task-box {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255,255,255,0.15);
+      border-radius: 15px;
+      padding: 25px;
+      margin-bottom: 40px;
+      backdrop-filter: blur(4px);
+    }
+
+    .task-box:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    .task-text {
+      flex: 1 1 45%;
+      text-align: left;
+      padding: 10px;
+    }
+
+    .task-text h3 {
+      color: #03045e;
+      margin-bottom: 10px;
+    }
+
+    .task-text p {
+      color: #001233;
+    }
+
+    .task-imgs {
+      flex: 1 1 45%;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .task-imgs img {
+      width: 45%;
+      height: 150px;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+    }
+
+    /* === SECTION 3 === */
+    .future {
+     background: linear-gradient(to bottom, #7f339958 0%, #00a6ff46 100%);
+      padding: 70px 30px;
+      text-align: center;
+      color: #fff;
+    }
+
+    .future h2 {
+      font-size: 32px;
+      margin-bottom: 25px;
+    }
+
+    .future p {
+      max-width: 800px;
+      margin: 0 auto 40px;
+    }
+
+    .future-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .goal {
+      width: 300px;
+      background: rgba(255,255,255,0.2);
+      border-radius: 15px;
+      padding: 20px;
+      backdrop-filter: blur(4px);
+      transition: 0.3s;
+    }
+
+    .goal:hover {
+      transform: translateY(-10px);
+    }
+
+    .goal img {
+      width: 100%;
+      height: 180px;
+      border-radius: 12px;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .goal h3 {
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    @media (max-width: 900px) {
+      .intro, .task-box {
+        flex-direction: column;
+        text-align: center;
+      }
+      .intro-images img {
+        height: 140px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- === SECTION 1 === -->
+  <section class="intro">
+    <div class="intro-text">
+      <h1>🎥 Video Annotation </h1>
+      <p>
+        Video Annotation Project is designed to bring intelligence to raw video data.
+Here, every frame is analyzed, labeled, and structured for better machine understanding.
+It helps researchers and AI developers identify key moments, objects, and actions in videos.
+With this project, we aim to make visual data smarter, more meaningful, and ready for real-world applications.
+      </p>
+      
+      <!-- ===Start Annotation</button>=== -->
+    </div>
+    <div class="intro-images">
+      <img src="Video iamge/intro 1.jpg" alt="Video 1">
+      <img src="Video iamge/2.png" alt="Video 2">
+      <img src="Video iamge/3.png" alt="Video 3">
+      <img src="Video iamge/4.jpg" alt="Video 4">
+    </div>
+  </section>
+
+  <!-- === SECTION 2 === -->
+  <section class="tasks">
+    <h2>🧩 Project Work & Tasks</h2>
+
+    <div class="task-box">
+      <div class="task-text">
+        <h3>Step 1: Data Collection</h3>
+        <p>Our first step involves collecting raw video data and organizing it into a well-structured format. This ensures every clip belongs to the correct category and metadata is properly recorded.</p>
+      </div>
+      <div class="task-imgs">
+        <img src="Video iamge/5.jpg" alt="">
+        <img src="Video iamge/6.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="task-box">
+      <div class="task-text">
+        <h3>Step 2: Annotation Process</h3>
+        <p>in this stage, we perform detailed manual annotations — marking objects, defining scenes, and adding descriptive tags to prepare the data for AI training.</p>
+      </div>
+      <div class="task-imgs">
+        <img src="Video iamge/7.jpg" alt="">
+        <img src="Video iamge/8.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="task-box">
+      <div class="task-text">
+        <h3>Step 3: Quality Check</h3>
+        <p>After annotation, the dataset goes through a thorough review and export phase to ensure accuracy and maintain high-quality standards.</p>
+      </div>
+      <div class="task-imgs">
+        <img src="Video iamge/9.jpg" alt="">
+        <img src="Video iamge/10.jpg" alt="">
+      </div>
+    </div>
+  </section>
+
+  <!-- === SECTION 3 === -->
+  <section class="future">
+    <h2>🚀 Future Goals</h2>
+    <p>Our goal is to make the annotation workflow smarter and faster by integrating automation, AI-driven tools, and real-time collaboration systems.</p>
+
+    <div class="future-grid">
+      <div class="goal">
+        <img src="Video iamge/11.png" alt="">
+        <h3>AI Labeling</h3>
+        <p>introducing auto-labeling powered by machine learning to enhance speed and precision.</p>
+      </div>
+      <div class="goal">
+        <img src="Video iamge/13.webp" alt="">
+        <h3>Cloud Dashboard</h3>
+        <p>Centralized project tracking and seamless data sharing across team members.</p>
+      </div>
+      <div class="goal">
+        <img src="Video iamge/14.jpg"alt="">
+        <h3>Performance Reports</h3>
+        <p>Get live annotation metrics, productivity stats, and accuracy analytics in real-time.</p>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>

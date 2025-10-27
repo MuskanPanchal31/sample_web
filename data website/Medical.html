@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Healthcare & Medical Transcription Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+ 
+<style>
+/* ---------------- GENERAL ---------------- */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  color: #333;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #e3f2fd, #f9fdff);
+  scroll-behavior: smooth;
+}
+h1, h2, h3 { margin: 0; }
+ 
+/* ---------------- HERO SECTION ---------------- */
+.hero-section {
+  position: relative;
+  background: linear-gradient(135deg, rgba(0, 119, 182, 0.8), rgba(0, 180, 216, 0.8), rgba(72, 202, 228, 0.85)),
+              url('medicalbg.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+  color: #fff;
+  overflow: hidden;
+  animation: heroZoom 10s ease-in-out infinite alternate;
+}
+@keyframes heroZoom {
+  0% { background-size: 100%; }
+  100% { background-size: 110%; }
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 750px;
+  padding: 20px;
+  animation: fadeInUp 1.5s ease-in-out;
+}
+.hero-content p:first-child {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 14px;
+  opacity: 0.9;
+}
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 15px 0;
+  line-height: 1.3;
+  background: linear-gradient(90deg, #ffffff, #bde0fe);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.hero-content p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.95;
+}
+.main-cta {
+  background: linear-gradient(45deg, #00b4d8, #48cae4);
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 35px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0,180,216,0.4);
+}
+.main-cta:hover {
+  background: linear-gradient(45deg, #0077b6, #90e0ef);
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(0,180,216,0.8);
+}
+.hero-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.2), transparent 50%),
+              radial-gradient(circle at 80% 70%, rgba(255,255,255,0.15), transparent 50%);
+  z-index: 1;
+}
+ 
+/* ---------------- SERVICES SECTION ---------------- */
+.services-section {
+  background: linear-gradient(180deg, #f4fcff, #eaf9fc, #d4f1f9);
+  padding: 100px 20px;
+  animation: fadeIn 1.5s ease-in;
+}
+.services-header {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 60px auto;
+}
+.services-header h2 {
+  font-size: 40px;
+  background: linear-gradient(90deg, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.services-header p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.6;
+}
+.service {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1100px;
+  margin: 60px auto;
+  background: linear-gradient(135deg, #ffffff, #f0fbff);
+  border-radius: 22px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  overflow: hidden;
+  transition: transform 0.5s ease, box-shadow 0.4s ease;
+  opacity: 0;
+  animation: slideUp 1s ease forwards;
+}
+.service:nth-child(odd) { animation-delay: 0.3s; }
+.service:nth-child(even) { animation-delay: 0.6s; }
+@keyframes slideUp {
+  0% { transform: translateY(40px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+.service:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.12);
+}
+.service:nth-child(even) { flex-direction: row-reverse; }
+ 
+.service .image-space {
+  width: 50%;
+  overflow: hidden;
+  position: relative;
+}
+.service .image-space img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  filter: brightness(0.95);
+}
+.service:hover .image-space img { transform: scale(1.08); }
+.service-content {
+  width: 50%;
+  padding: 50px;
+}
+.service-content h3 {
+  font-size: 28px;
+  color: #023e8a;
+  margin-bottom: 15px;
+}
+.service-content p {
+  font-size: 16.5px;
+  color: #555;
+  line-height: 1.6;
+}
+ 
+ 
+/* CREATIVE CARD SECTION (QUALITY CHECK) */
+.qc-section {
+  padding: 100px 40px;
+  text-align: center;
+  background: linear-gradient(135deg, #e0f7fa, #f1fcff);
+  position: relative;
+}
+ 
+.qc-section h2 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #0077b6;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+ 
+/* GRID CONTAINER */
+.qc-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+ 
+/* UNIQUE CARD DESIGN */
+.qc-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 25px;
+  background: #ffffff;
+  padding: 60px 30px 40px;
+  box-shadow: 0 10px 25px rgba(0, 123, 255, 0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+}
+ 
+.qc-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: conic-gradient(from 0deg, #00b4d8, #48cae4, #0077b6, #90e0ef, #00b4d8);
+  animation: spin 6s linear infinite;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+ 
+.qc-card:hover::before {
+  opacity: 1;
+}
+ 
+.qc-card::after {
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: #fff;
+  border-radius: 22px;
+  clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+  z-index: 1;
+}
+ 
+.qc-card-content {
+  position: relative;
+  z-index: 2;
+}
+ 
+.qc-icon {
+  font-size: 2.8rem;
+  color: #00b4d8;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+ 
+.qc-card h3 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #03045e;
+  margin-bottom: 15px;
+}
+ 
+.qc-card p {
+  font-size: 1rem;
+  color: #023e8a;
+  line-height: 1.6;
+}
+ 
+/* HOVER EFFECTS */
+.qc-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 15px 40px rgba(0, 123, 255, 0.25);
+}
+ 
+/* ROTATING BORDER EFFECT */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+ 
+/* ---------------- RESPONSIVE ---------------- */
+@media (max-width: 900px) {
+  .service { flex-direction: column !important; }
+  .service .image-space, .service-content { width: 100%; height: 250px; }
+  .hero-content h1 { font-size: 34px; }
+  .hero-content p { font-size: 15px; }
+  .qc-grid-container { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .qc-grid-container { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+ 
+<!-- HERO -->
+<section class="hero-section">
+  <div class="hero-content">
+    <p>Modern Spaces, Our Mission</p>
+    <h1>Healthcare & Medical Transcription Services</h1>
+    <p>Protect sensitive patient information with secure, accurate, and HIPAA-compliant transcription handled by experts.</p>
+    <!-- <a href="#" class="main-cta">DISCOVER NOW</a> -->
+  </div>
+</section>
+ 
+<!-- SERVICES -->
+<section class="services-section">
+  <div class="services-header">
+    <h2>Our Specialized Transcription Services</h2>
+    <p>We blend technology and medical expertise to deliver precise, secure, and fast documentation across all healthcare domains.</p>
+  </div>
+ 
+  <div class="service">
+    <div class="image-space"><img src="Medicla iamge/translate.png" alt="Medical Transcription"></div>
+    <div class="service-content">
+      <h3>Medical Transcription</h3>
+      <p>Our certified experts transcribe patient reports, clinical summaries, and operative notes with near-perfect accuracy, ensuring compliance and confidentiality.</p>
+    </div>
+  </div>
+ 
+  <div class="service">
+    <div class="image-space"><img src="Medicla iamge/coding.png" alt="Medical Coding"></div>
+    <div class="service-content">
+      <h3>Medical Coding</h3>
+      <p>From ICD-10 to CPT, our coders ensure every record meets global standards with precision and audit-ready accuracy.</p>
+    </div>
+  </div>
+ 
+  <div class="service">
+    <div class="image-space"><img src="Medicla iamge/ai.png" alt="AI Review"></div>
+    <div class="service-content">
+      <h3>AI-Powered Review</h3>
+      <p>AI-assisted transcription verification eliminates human errors while maintaining the nuances of clinical documentation.</p>
+    </div>
+  </div>
+</section>
+ 
+<!-- CREATIVE QUALITY CHECK SECTION -->
+<section class="qc-section">
+  <h2>Our Quality Standards</h2>
+  <div class="qc-grid">
+    <div class="qc-card">
+     
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fas fa-shield-alt"></i></i></div>
+        <h3>Rigorous Quality Assurance</h3>
+        <p>Two-tier reviews for every coding record to ensure top accuracy and compliance.</p>
+      </div>
+    </div>
+ 
+    <div class="qc-card">
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fas fa-bullseye"></i></div>
+        <h3>Consistent High Accuracy</h3>
+        <p>Multi-stage workflows that achieve accuracy rates above industry benchmarks.</p>
+      </div>
+    </div>
+ 
+    <div class="qc-card">
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fas fa-search"></i></div>
+        <h3>Data Verification & Validation</h3>
+        <p>Each dataset undergoes automated and manual validation for zero-bias output.</p>
+      </div>
+    </div>
+    <div class="qc-card">
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fas fa-clipboard-check"></i></div>
+        <h3>Thorough Auditing</h3>
+        <p>Post-production audits on every project ensure continuous quality and trust.</p>
+      </div>
+    </div>
+    <div class="qc-card">
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fas fa-keyboard"></i></div>
+        <h3>Transcription (Stenography) Check</h3>
+        <p>Expert auditors verify transcripts against raw recordings for 100% text fidelity.</p>
+      </div>
+    </div>
+ 
+    <div class="qc-card">
+      <div class="qc-card-content">
+        <div class="qc-icon"><i class="fa-solid fa-robot"></i></div>
+        <h3>AI-Specific Coding</h3>
+        <p>Optimized coding formats compatible with HIPAA and AI training pipelines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+</html>
+ 
+ 
+ 

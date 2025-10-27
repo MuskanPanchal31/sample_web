@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Form with Image & Gradient</title>
+
+<!-- Font Awesome CDN for social icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+  body {
+    margin:0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #e84f4f, #6a6cfb);
+  }
+
+  .contact-container {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    align-items:stretch;
+    width:90%;
+    max-width:1200px;
+    margin:50px auto;
+    box-shadow:0 10px 30px rgba(0,0,0,0.1);
+    border-radius:20px;
+    overflow:hidden;
+    background:#fff;
+  }
+
+  /* Left section with background image */
+  .contact-left {
+    flex:1 1 400px;
+    background: url('IAMGE.JPG') center/cover no-repeat;
+    color:#fff;
+    padding:40px 30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .contact-left h1 {
+    font-size:2.2rem;
+    margin-bottom:15px;
+    text-shadow:1px 1px 5px rgba(0,0,0,0.6);
+  }
+
+  .contact-left p {
+    font-size:1rem;
+    line-height:1.6;
+    text-shadow:1px 1px 5px rgba(0,0,0,0.6);
+  }
+
+  .contact-left .social-icons {
+    margin-top:25px;
+  }
+
+  .contact-left .social-icons a {
+    color:#fff;
+    font-size:24px;
+    margin-right:15px;
+    transition: transform 0.2s;
+  }
+  .contact-left .social-icons a:hover {
+    transform: scale(1.2);
+  }
+
+  /* Right section with form */
+  .contact-right {
+    flex:1 1 400px;
+    padding:40px 30px;
+    background:#fff;
+  }
+
+  .contact-right h2 {
+    font-size:1.8rem;
+    color:#0b0e19;
+    margin-bottom:20px;
+  }
+
+  .contact-right form input,
+  .contact-right form select,
+  .contact-right form textarea {
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:10px;
+    border:1px solid #ccc;
+    font-size:1rem;
+  }
+
+  .contact-right form button {
+    width:100%;
+    padding:14px;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    font-weight:500;
+    color:#fff;
+    cursor:pointer;
+    background:linear-gradient(to right,#cb88a6,#6466c2);
+    transition:opacity 0.3s;
+  }
+  .contact-right form button:hover {
+    opacity:0.9;
+  }
+
+  /* Popup */
+  #popup {
+    display:none;
+    position:fixed;
+    top:0; left:0;
+    width:100%; height:100%;
+    background:rgba(0,0,0,0.6);
+    justify-content:center;
+    align-items:center;
+    z-index:1000;
+  }
+  #popup .popup-content {
+    background:#fff;
+    padding:30px;
+    border-radius:15px;
+    text-align:center;
+    width:300px;
+    box-shadow:0 0 20px rgba(0,0,0,0.2);
+  }
+  #popup .popup-content h2 {
+    color:#333;
+    margin-bottom:10px;
+  }
+  #popup .popup-content p {
+    color:#666;
+    font-size:15px;
+  }
+  #popup .popup-content button {
+    margin-top:15px;
+    padding:10px 25px;
+    border:none;
+    border-radius:25px;
+    cursor:pointer;
+    color:#fff;
+    background:linear-gradient(to right,#f04e98,#6a6cfb);
+  }
+
+  @media(max-width:768px) {
+    .contact-container {
+      flex-direction:column;
+    }
+    .contact-left, .contact-right {
+      flex:1 1 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="contact-container">
+  <!-- Left Section with Image -->
+  <div class="contact-left">
+    <h1>Have Questions?</h1>
+    <p>We are here to help. Reach out and let's collaborate on your projects with the best AI and digital solutions.</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    
+    </div>
+  </div>
+
+  <!-- Right Section Form -->
+  <div class="contact-right">
+    <h2>Contact Us</h2>
+    <form id="contactForm" onsubmit="showPopup(event)">
+      <input type="text" placeholder="Full Name" required>
+      <input type="email" placeholder="Email Address" required>
+      <input type="tel" placeholder="Phone Number">
+      <select required>
+        <option value="">Country</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+        <option>china</option>
+      </select>
+      <input type="text" placeholder="Company Name">
+      <textarea placeholder="Your Message" rows="4"></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+
+<!-- Popup Modal -->
+<div id="popup">
+  <div class="popup-content">
+    <h2>✅ Form Submitted!</h2>
+    <p>Thank you for contacting us. We'll get back to you soon.</p>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script>
+function showPopup(event) {
+  event.preventDefault();
+  document.getElementById("popup").style.display = "flex";
+  document.getElementById("contactForm").reset();
+}
+function closePopup() {
+  document.getElementById("popup").style.display = "none";
+}
+</script>
+
+</body>
+</html>

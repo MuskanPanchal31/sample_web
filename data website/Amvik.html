@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About AMVIK</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #092745a4;
+  }
+
+  /* About Section */
+  .about-amvik {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #8ec5fc, #e0c3fc);
+    padding: 80px 20px;
+    border-radius: 25px;
+    max-width: 1200px;
+    margin: 50px auto;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+  }
+
+  .about-amvik .image-box {
+    flex: 1 1 350px;
+    min-height: 280px;
+    margin: 10px;
+    overflow: hidden;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .about-amvik .image-box:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  }
+
+  .about-amvik .image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  .about-amvik .info-box {
+    flex: 1 1 450px;
+    padding: 20px 30px;
+    color: #171718;
+  }
+
+  .about-amvik .info-box h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+  }
+
+  .about-amvik .info-box p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    margin-bottom: 25px;
+    color: #333;
+  }
+
+  .features-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    list-style: none;
+    padding: 0;
+  }
+
+  .features-list li {
+    flex: 1 1 45%;
+    background: #fff;
+    border-radius: 12px;
+    padding: 15px 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .features-list li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+  }
+
+  .features-list li i {
+    color: #2575fc;
+    margin-right: 12px;
+    font-size: 1.3em;
+  }
+
+</style>
+</head>
+<body>
+
+<!-- About AMVIK Section -->
+<section class="about-amvik">
+  <!-- Left Image Box -->
+  <div class="image-box">
+    <img src="https://images.pexels.com/photos/3861972/pexels-photo-3861972.jpeg?auto=compress&cs=tinysrgb&w=800" alt="AMVIK Tool Image">
+  </div>
+
+  <!-- Right Info Box -->
+  <div class="info-box">
+    <h2><i class="fa-solid fa-circle-info" style="color:#2575fc;"></i> About AMVIK</h2>
+    <p><strong>AMVIK</strong> is a cutting-edge transcription tool developed by <strong>Taarini</strong>, combining automation and human expertise to deliver accurate and efficient transcription, data filtration, proofreading, and client collaboration solutions.</p>
+    
+    <ul class="features-list">
+      <li><i class="fa-solid fa-check"></i> Multiple transcription formats supported</li>
+      <li><i class="fa-solid fa-check"></i> Built-in data filtration & proofreading</li>
+      <li><i class="fa-solid fa-check"></i> Integrates with open-source transcription platforms</li>
+      <li><i class="fa-solid fa-check"></i> Secure client portal for project management</li>
+      <li><i class="fa-solid fa-check"></i> Fully customizable as per client needs</li>
+    </ul>
+  </div>
+</section>
+
+</body>
+</html>

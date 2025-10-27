@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Collection & Annotation Services</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+/* GLOBAL STYLES */
+body {
+  font-family: "Poppins", sans-serif;
+  margin:0;
+  padding:0;
+  background: linear-gradient(135deg, #f0f4f8, #d9e6f2);
+  color: #333;
+}
+img { max-width:100%; height:300px; display: flex; }
+
+/* HERO SECTION */
+.hero {
+  display:flex;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  padding:60px 20px;
+  background: linear-gradient(90deg, #012166, #8fb1fbb5);  color:#ffffff;
+  border-radius:25px;
+  width:90%;
+  margin:40px auto;
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+.hero-left { flex:1 1 300px; }
+.hero-left h1 {
+  font-size:2.8rem;
+  line-height:1.2;
+  margin-bottom:20px;
+}
+.hero-left p { font-size:1.1rem; line-height:1.6; }
+.hero-right { flex:1 1 300px; text-align:center; }
+.hero-right img { border-radius:25px; transform: scale(1.05); transition:0.3s ease; }
+.hero-right img:hover { transform: scale(1.1); }
+
+/* SECTION TITLES */
+section h1, .security-section h2, .quality-section h2 {
+  text-align:center;
+  font-size:2rem;
+  margin-bottom:20px;
+  font-weight:800;
+}
+section p, .security-section p, .quality-text p {
+  max-width:800px;
+  margin:0 auto 30px;
+  font-size:1rem;
+  line-height:1.6;
+  text-align:center;
+}
+
+/* CARD GROUPS */
+.card-group {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+  padding:40px 20px;
+  border-radius:25px;
+  margin:40px auto;
+  transition: all 0.5s ease;
+}
+.group1 { background: linear-gradient(135deg, #d31e7ca8, #ffd6d6); }
+.group2 { background: linear-gradient(135deg, #082cca86, #069baf73); }
+.group3 { background: linear-gradient(135deg, #a015796e, #09508aa9); }
+
+/* INDIVIDUAL CARDS */
+.card-group .card {
+  background:#fff;
+  border-radius:20px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  padding:25px 20px;
+  flex:1 1 220px;
+  max-width:250px;
+  text-align:center;
+  transition: all 0.3s ease;
+  cursor:pointer;
+}
+.card-group .card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+.card .icon {
+  font-size:2.2rem;
+  background: linear-gradient(45deg, #06bba6b9, #c170e4e0,#910efc8f);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  margin-bottom:15px;
+  transition: transform 0.3s ease;
+}
+.card:hover .icon { transform: rotate(15deg) scale(1.2); }
+.card h3 { margin:15px 0 10px; color:#333; font-size:1.1rem; }
+.card p { color:#555; font-size:0.9rem; line-height:1.4; }
+
+/* SECURITY SECTION */
+.security-section {
+  background: linear-gradient(135deg, #0a20c97b, #50df0958);
+  padding:50px 20px;
+  border-radius:25px;
+  width:90%;
+  margin:60px auto;
+  box-shadow:0 8px 20px rgba(0,0,0,0.1);
+}
+.security-list {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:20px;
+}
+.security-item {
+  background:#fff;
+  border-radius:20px;
+  padding:25px 20px;
+  flex:1 1 220px;
+  max-width:250px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  text-align:center;
+  overflow:hidden;
+}
+.security-item:hover {
+  transform: scale(1.05);
+  box-shadow:0 12px 25px rgba(0,0,0,0.2);
+}
+.security-item img { width:100%; height:auto; margin-bottom:15px; }
+.security-item h4 { margin-bottom:10px; font-size:1rem; }
+.security-item p { font-size:0.9rem; line-height:1.4; }
+
+/* QUALITY SECTION */
+.quality-section {
+  background:#f9f9f9;
+  padding:50px 20px;
+  margin:50px auto;
+  border-radius:25px;
+  box-shadow:0 6px 15px rgba(0,0,0,0.1);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  width:90%;
+}
+.quality-text { flex:1 1 300px; max-width:600px; padding:20px; }
+.quality-text h2 { color:#333; font-size:1.8rem; margin-bottom:15px; }
+.quality-text p { color:#555; font-size:1rem; line-height:1.6; margin-bottom:20px; }
+.quality-text ul { list-style:none; padding:0; }
+.quality-text ul li { background:#e0f7fa; margin:8px 0; padding:10px 15px; border-radius:8px; font-size:0.95rem; display:flex; align-items:center; }
+.quality-text ul li i { color:#00796b; margin-right:10px; }
+.quality-image { flex:1 1 250px; max-width:400px; padding:20px; text-align:center; }
+
+/* MEDIA QUERIES */
+@media (max-width:1024px){
+  .hero-left h1 { font-size:2.2rem; }
+}
+@media (max-width:768px){
+  .hero { flex-direction:column; text-align:center; }
+  .hero-left, .hero-right { flex:1 1 100%; }
+  .card-group { flex-direction:column; padding:30px 10px; }
+  .card { max-width:100%; }
+  .security-list { flex-direction:column; }
+  .quality-section { flex-direction:column; }
+  .quality-text, .quality-image { flex:1 1 100%; max-width:100%; text-align:center; }
+}
+@media (max-width:480px){
+  .hero-left h1 { font-size:1.6rem; }
+  .hero-left p, section p, .security-section p, .quality-text p { font-size:0.9rem; }
+  .card h3 { font-size:1rem; }
+  .card p { font-size:0.85rem; }
+  .quality-text h2 { font-size:1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO SECTION -->
+<div class="hero">
+  <div class="hero-left">
+    <h1>High-Quality Data Collection <br>for AI & ML Training</h1>
+    <p>We collect diverse datasets including speech, image, video, text, and behavioral data that power AI, ML, and computer vision models. Our data collection ensures variety, quality, and global compliance.</p>
+  </div>
+  <div class="hero-right">
+    <img src="Data Collection/3.png" alt="data collection">
+  </div>
+</div>
+
+<!-- DATA COLLECTION TYPES -->
+<section class="features">
+  <h1>Our Specialized Data Collection Services</h1>
+  <p>We deliver precise and secure datasets for AI model development, including speech recognition, facial analysis, autonomous driving, and natural language understanding.</p>
+
+  <!-- GROUP 1 -->
+  <div class="card-group group1">
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-microphone-lines"></i></div>
+      <h3>Speech Data</h3>
+      <p>High-quality multilingual speech samples for ASR model training.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-user"></i></div>
+      <h3>Face Image Collection</h3>
+      <p>Diverse facial images for face recognition and emotion AI systems.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-person-walking"></i></div>
+      <h3>Human Behaviour</h3>
+      <p>Behavioral and motion data for advanced AI and robotics systems.</p>
+    </div>
+  </div>
+
+  <!-- GROUP 2 -->
+  <div class="card-group group2">
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-video"></i></div>
+      <h3>Video Collection</h3>
+      <p>Dynamic video datasets for gesture, activity, and object tracking models.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-car"></i></div>
+      <h3>Car Video Collection</h3>
+      <p>Road and in-vehicle footage to enhance autonomous vehicle training.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-video-camera"></i></div>
+      <h3>CCTV Surveillance</h3>
+      <p>Security and anomaly detection dataset from surveillance feeds.</p>
+    </div>
+  </div>
+
+  <!-- GROUP 3 -->
+  <div class="card-group group3">
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-hand"></i></div>
+      <h3>Body Part Data</h3>
+      <p>Detailed image datasets for healthcare and biometric applications.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-cube"></i></div>
+      <h3>Object Collection</h3>
+      <p>Image datasets of real-world objects for object detection AI.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-file-lines"></i></div>
+      <h3>Text Data</h3>
+      <p>Large multilingual text datasets for NLP and sentiment analysis.</p>
+    </div>
+  </div>
+</section>
+
+<!-- SECURITY SECTION -->
+<div class="security-section">
+  <h2>Industry-Best Information Security</h2>
+  <p>We prioritize data confidentiality and compliance at every stage of our collection and annotation process. Our systems follow ISO and GDPR standards to protect client data.</p>
+
+  <div class="security-list">
+    <div class="security-item">
+      <img src="Data Collection/4.png" alt="Data Encryption">
+      <h4>Data Encryption</h4>
+      <p>End-to-end encryption for all file transfers and storage. Ensures complete privacy and secure data handling in every project.</p>
+    </div>
+    <div class="security-item">
+      <img src="Data Collection/1.png" alt="Access Control">
+      <h4>Access Control</h4>
+      <p>Role-based secure access to protect sensitive datasets. Control permissions efficiently to maintain confidentiality in your data projects.</p>
+    </div>
+    <div class="security-item">
+      <img src="Data Collection/4.png" alt="Compliance Standards">
+      <h4>Compliance Standards</h4>
+      <p>Fully compliant with GDPR, ISO 27001, and NDA policies. Ensures your data collection adheres to industry standards at all times.</p>
+    </div>
+    <div class="security-item">
+      <img src="Data Collection/2.png" alt="Data Anonymization">
+      <h4>Data Anonymization</h4>
+      <p>Personal identifiers removed to ensure privacy protection. Maintain confidentiality while using datasets for AI and ML projects.</p>
+    </div>
+  </div>
+</div>
+
+<!-- QUALITY SECTION -->
+<div class="quality-section">
+  <div class="quality-text">
+    <h2><i class="fa-solid fa-check-double"></i> Time Period & Quality Assurance</h2>
+    <p>Every dataset undergoes strict review and validation for accuracy, completeness, and timing consistency. We ensure all video and audio clips meet the defined duration and clarity standards.</p>
+    <ul>
+      <li><i class="fa-solid fa-clock"></i> Defined collection time periods for consistency</li>
+      <li><i class="fa-solid fa-eye"></i> Manual inspection and AI validation of all samples</li>
+      <li><i class="fa-solid fa-list-check"></i> Detailed QA reports for each batch of data</li>
+      <li><i class="fa-solid fa-award"></i> 99% accuracy target with verified metadata</li>
+    </ul>
+  </div>
+  <div class="quality-image">
+    <img src="Data Collection/6.png" alt="Quality Assurance">
+  </div>
+</div>
+
+</body>
+</html>

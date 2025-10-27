@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Transcription & Subtitles</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+  body {
+    font-family: "Poppins", sans-serif;
+    margin:0;
+    padding:0;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  }
+
+  /* HERO SECTION */
+  .hero {
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:60px;
+    background-color:#f6f4ff;
+    border-radius:20px;
+    width:80%;
+    margin:60px auto;
+    box-shadow:0 0 10px rgba(0,0,0,0.1);
+  }
+  .hero-left { width:55%; }
+  .hero-left h1 { font-size:48px; line-height:1.2; margin-bottom:10px; color:#333; }
+  .hero-left p { font-size:18px; color:#333; line-height:1.6; }
+  .hero-left button {
+    background:linear-gradient(90deg, #7b5cf7, #3a2db5);
+    color:white;
+    border:none;
+    padding:12px 26px;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition: all 0.3s ease;
+  }
+  .hero-left button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  }
+  .hero-right img { width:100%; border-radius:20px; }
+
+  /* FEATURES SECTION */
+  section.features {
+    text-align:center;
+    padding:50px 20px;
+  }
+  section.features h1 {
+    font-size:2.5em;
+    font-weight:800;
+    margin-bottom:10px;
+    color:#333; /* original color restored */
+  }
+  section.features span {
+    margin:0 10px;
+    display:inline-block;
+    font-weight:600;
+    color:#4b2bb3;
+  }
+  section.features p {
+    max-width:700px;
+    margin:20px auto;
+    font-size:1.05em;
+    line-height:1.6;
+    color:#333;
+  }
+
+  /* CARDS */
+  .cards {
+    display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin-top:40px;
+  }
+  .card {
+    background:#fff;
+    border-radius:15px;
+    box-shadow:0 4px 10px rgba(0,0,0,0.08);
+    padding:30px;
+    width:250px;
+    transition: all 0.3s ease;
+    cursor:pointer;
+    text-align:center;
+  }
+  .card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  }
+  /* Gradient Icons */
+  .card .icon {
+    font-size:40px;
+    background: linear-gradient(45deg, #fc9f25, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom:15px;
+    transition: transform 0.3s ease;
+    display:inline-block;
+  }
+  .card:hover .icon {
+    transform: scale(1.2);
+    /* gradient remains same, no square/box */
+  }
+  .card h3 { margin:15px 0 10px; color:#333; }
+  .card p { color:#555; font-size:0.95em; }
+
+  /* LANGUAGES SECTION */
+  .languages-section {
+    background: linear-gradient(135deg, #ffecd2, #fcb69f);
+    padding:60px 20px;
+    text-align:center;
+    border-radius:20px;
+    width:80%;
+    margin:40px auto;
+    box-shadow:0 6px 20px rgba(0,0,0,0.1);
+  }
+  .languages-section h2 {
+    font-size:2.5em;
+    margin-bottom:20px;
+    color:#333; /* original heading color */
+  }
+  .languages-list {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:15px;
+    margin-top:30px;
+  }
+  .languages-list div {
+    background:#fff;
+    padding:15px 20px;
+    border-radius:10px;
+    font-size:1.1em;
+    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    cursor:pointer;
+  }
+  .languages-list div:hover {
+    transform: translateY(-5px);
+    box-shadow:0 8px 20px rgba(0,0,0,0.15);
+  }
+
+  /* QUALITY SECTION */
+  .quality-section {
+    background-color:#f9f9f9;
+    padding:40px;
+    margin:40px auto;
+    border-radius:10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    font-family:Arial, sans-serif;
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    width:85%;
+  }
+  .quality-text {
+    flex:1 1 400px;
+    max-width:600px;
+    padding:20px;
+  }
+  .quality-text h2 {
+    color:#333333; /* original heading color */
+    font-size:28px;
+    margin-bottom:10px;
+  }
+  .quality-text p {
+    color:#555555;
+    font-size:16px;
+    line-height:1.6;
+    margin-bottom:20px;
+  }
+  .quality-text ul {
+    list-style-type:none;
+    padding:0;
+  }
+  .quality-text ul li {
+    background-color:#e0f7fa;
+    margin:5px 0;
+    padding:10px 15px;
+    border-radius:5px;
+    font-size:16px;
+  }
+  .quality-text ul li i {
+    background: linear-gradient(45deg, #fc9f25, #2575fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-right:8px;
+    display:inline-block;
+  }
+  .quality-image {
+    flex:1 1 300px;
+    max-width:400px;
+    padding:20px;
+    text-align:center;
+  }
+  .quality-image img {
+    width:100%;
+    height:auto;
+    border-radius:10px;
+    box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  }
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left">
+      <h1><span>Where Movies</span><br>Meet Every Language</h1>
+      <p>Get accurate and high-quality subtitles and transcription for movies, web series, and videos in any language using AI + human-assisted technology.</p>
+  </div>
+  <div class="hero-right">
+    <img src="Subtitling page image/s1.png" alt="subtitle">
+  </div>
+</div>
+
+<!-- FEATURES -->
+<section class="features">
+  <h1>Subtitles & Transcriptions for Global Content</h1>
+  <div>
+    <span><i class="fa-solid fa-film"></i> Movies & Web Series</span>
+    <span><i class="fa-solid fa-globe"></i> Multiple Languages</span>
+    <span><i class="fa-solid fa-bolt"></i> Fast Delivery</span>
+  </div>
+  <p>Translate, subtitle, and transcribe your videos efficiently with our AI-assisted platform enhanced by human review. We provide professional-grade subtitles for entertainment, corporate, and educational content in any language you need.</p>
+
+  <div class="cards">
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-video"></i></div>
+      <h3>Movie Subtitles</h3>
+      <p>Accurate subtitles in multiple languages</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-tv"></i></div>
+      <h3>Web Series</h3>
+      <p>High-quality subtitles for streaming content</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-language"></i></div>
+      <h3>Multilingual Content</h3>
+      <p>Subtitles and transcription in any language</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-spell-check"></i></div>
+      <h3>Web localization</h3>
+      <p>Ensure your website content is accurately translated, culturally adapted, and optimized for global audiences.</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+      <h3>Advertisement</h3>
+      <p>Engage every visitor—accurate, fast, and multi-language subtitles that bring your website content to life!</p>
+    </div>
+    <div class="card">
+      <div class="icon"><i class="fa-solid fa-newspaper"></i></div>
+      <h3>News</h3>
+      <p>From local updates to global stories—clear subtitles that keep your audience informed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- LANGUAGES -->
+<div class="languages-section" style="text-align:center; padding:50px 20px; background:#fff;">
+  <h2 style="font-size:2em; color:#333; margin-bottom:20px;">All Regional Languages</h2>
+  <p style="max-width:800px; margin:0 auto; font-size:1.1em; line-height:1.8; color:#444;">
+    We offer transcription, subtitles, and translation services in a wide range of
+    <strong>Indian languages</strong> such as Hindi, Tamil, Telugu, Marathi, and Bengali, as well as
+    major <strong>global languages</strong> including English, French, Spanish, German, and Chinese.  
+    We also specialize in various <strong>Arabic dialects</strong> to cater to clients across the Middle East.  
+    Our multilingual experts ensure cultural accuracy, clarity, and consistency across every project.
+  </p>
+</div>
+
+<!-- QUALITY -->
+<div class="quality-section">
+  <div class="quality-text">
+    <h2><i class="fa-solid fa-check-double"></i> Quality Assurance & QC</h2>
+    <p>At our company, quality is not an afterthought — it is our standard. Every subtitle, transcription, and translation goes through a thorough Quality Assurance and Quality Control process to ensure accuracy, proper timing, and consistency.</p>
+    <ul>
+      <li><i class="fa-solid fa-magnifying-glass"></i> Manual & automated review for 98%+ accuracy</li>
+      <li><i class="fa-solid fa-clock"></i> Timing and synchronization check for perfect subtitles</li>
+      <li><i class="fa-solid fa-file-code"></i> Format compliance (SRT, VTT, TTML, EBU-STL)</li>
+      <li><i class="fa-solid fa-clipboard-check"></i> Final QA report included with every delivery</li>
+    </ul>
+  </div>
+  <div class="quality-image">
+    <img src="Subtitling page image/s2.png" alt="Quality Assurance Image">
+  </div>
+</div>
+
+</body>
+</html>
