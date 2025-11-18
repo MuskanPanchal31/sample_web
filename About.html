@@ -145,7 +145,45 @@ body{
   transform:translateY(-10px);
   background:rgba(255,255,255,0.18);
 }
- 
+ /* ------------------- STATS SECTION ------------------- */
+.stats-container{
+  display:flex;
+  justify-content:center;
+  gap:40px;
+  margin-top:25px;
+  flex-wrap:wrap;
+}
+
+.stat{
+  min-width:220px;
+  padding:25px;
+  background:rgba(255,255,255,0.07);
+  border:1px solid rgba(255,255,255,0.18);
+  border-radius:18px;
+  text-align:center;
+  backdrop-filter:blur(12px);
+  transition:0.4s ease;
+  box-shadow:0 0 20px rgba(255,255,255,0.05);
+}
+
+.stat:hover{
+  transform:translateY(-10px) scale(1.05);
+  background:rgba(255,255,255,0.15);
+  box-shadow:0 0 25px rgba(255,255,255,0.18);
+}
+
+.stat h1{
+  font-size:42px;
+  font-weight:700;
+  color:#0aff9d;
+  margin-bottom:8px;
+}
+
+.stat p{
+  font-size:16px;
+  opacity:0.9;
+}
+
 </style>
 </head>
 <body>
@@ -165,7 +203,33 @@ body{
     branding & technology experiences with next-level perfection.
   </p>
 </div>
- 
+ <div class="glass-box">
+  <h2 class="section-title">Our Achievements</h2>
+
+  <div class="stats-container">
+
+    <div class="stat">
+      <h1>7+</h1>
+      <p>Years of Experience</p>
+    </div>
+
+    <div class="stat">
+      <h1>150+</h1>
+      <p>Trained Professionals</p>
+    </div>
+
+    <div class="stat">
+      <h1>70+</h1>
+      <p>Languages Supported</p>
+    </div>
+
+    <div class="stat">
+      <h1>1000+</h1>
+      <p>Projects Completed</p>
+    </div>
+
+  </div>
+</div>
 <!-- ================= OUR STORY ================= -->
 <div class="glass-box">
   <h2 class="section-title">Our Story</h2>
