@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premium About Us</title>
+ 
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+ 
+<style>
+/* ------------------- GLOBAL ------------------- */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:#000;
+  color:#fff;
+  overflow-x:hidden;
+}
+ 
+/* ------------------- BACKGROUND ANIMATION ------------------- */
+.bg-animation{
+  position:fixed;
+  top:0; left:0;
+  width:100%; height:100%;
+  z-index:-1;
+  background: linear-gradient(130deg, #1e1e1e, #131313, #2d0055, #000000);
+  background-size:400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+ 
+@keyframes gradientMove {
+  0%{ background-position:0% 50%; }
+  50%{ background-position:100% 50%; }
+  100%{ background-position:0% 50%; }
+}
+ 
+/* Floating Shapes */
+.shape{
+  position:absolute;
+  border-radius:50%;
+  opacity:0.35;
+  animation: float 10s infinite ease-in-out;
+}
+ 
+.shape1{ width:180px; height:180px; background:#ff0055; top:5%; left:8%; }
+.shape2{ width:250px; height:250px; background:#0aff9d; bottom:10%; right:5%; animation-duration:14s; }
+.shape3{ width:150px; height:150px; background:#00c3ff; top:40%; right:20%; animation-duration:12s; }
+.shape4{ width:200px; height:200px; background:#f8ff29; bottom:20%; left:10%; animation-duration:18s; }
+ 
+@keyframes float {
+  0%{ transform:translateY(0) translateX(0); }
+  50%{ transform:translateY(-40px) translateX(40px); }
+  100%{ transform:translateY(0) translateX(0); }
+}
+ 
+/* ------------------- HEADER ------------------- */
+.hero{
+  padding:120px 50px 80px;
+  text-align:center;
+}
+.hero h1{
+  font-size:60px;
+  font-weight:700;
+  margin-bottom:15px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+.hero p{
+  max-width:700px;
+  margin:auto;
+  font-size:18px;
+  opacity:0.9;
+}
+ 
+/* ------------------- GLASS SECTIONS ------------------- */
+.glass-box{
+  width:90%;
+  margin:60px auto;
+  padding:40px;
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(15px);
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,0.2);
+  animation:fadeIn 1.5s ease;
+}
+ 
+@keyframes fadeIn {
+  from{ opacity:0; transform:translateY(30px); }
+  to{ opacity:1; transform:translateY(0); }
+}
+ 
+.section-title{
+  font-size:32px;
+  font-weight:600;
+  margin-bottom:15px;
+}
+ 
+/* ------------------- TEAM SECTION ------------------- */
+.team{
+  display:flex;
+  gap:30px;
+  margin-top:30px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+.team-card{
+  width:260px;
+  background:rgba(255,255,255,0.08);
+  border-radius:20px;
+  padding:20px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+  transition:0.4s;
+}
+.team-card:hover{
+  transform:translateY(-10px);
+  background:rgba(255,255,255,0.15);
+}
+.team-card img{
+  width:100%;
+  border-radius:15px;
+  margin-bottom:15px;
+}
+ 
+/* ------------------- MISSION / VISION ------------------- */
+.cards{
+  display:flex;
+  gap:25px;
+  flex-wrap:wrap;
+  margin-top:20px;
+}
+.card{
+  flex:1;
+  min-width:270px;
+  background:rgba(255,255,255,0.08);
+  padding:25px;
+  border-radius:18px;
+  transition:0.4s;
+}
+.card:hover{
+  transform:translateY(-10px);
+  background:rgba(255,255,255,0.18);
+}
+ 
+</style>
+</head>
+<body>
+ 
+<div class="bg-animation">
+  <div class="shape shape1"></div>
+  <div class="shape shape2"></div>
+  <div class="shape shape3"></div>
+  <div class="shape shape4"></div>
+</div>
+ 
+<!-- ================= HERO ================= -->
+<div class="hero">
+  <h1>About Us</h1>
+  <p>
+    We are a creative digital company building premium modern websites, apps,
+    branding & technology experiences with next-level perfection.
+  </p>
+</div>
+ 
+<!-- ================= OUR STORY ================= -->
+<div class="glass-box">
+  <h2 class="section-title">Our Story</h2>
+  <p>
+    Our journey began with a mission to bring premium design & technology
+    solutions at an affordable price.  
+    Every project we create is filled with innovation, precision and high-quality UI/UX.
+  </p>
+</div>
+ 
+<!-- ================= OUR MISSION / VISION ================= -->
+<div class="glass-box">
+  <h2 class="section-title">Mission & Vision</h2>
+ 
+  <div class="cards">
+    <div class="card">
+      <h3>Our Mission</h3>
+      <p>
+        To empower businesses with modern, fast, premium digital experiences
+        that help them grow.
+      </p>
+    </div>
+ 
+    <div class="card">
+      <h3>Our Vision</h3>
+      <p>
+        To become a global leader in digital innovation with creativity at its core.
+      </p>
+    </div>
+  </div>
+</div>
+ 
+<!-- ================= TEAM SECTION ================= -->
+<div class="glass-box">
+  <h2 class="section-title">Meet Our Team</h2>
+ 
+  <div class="team">
+    <div class="team-card">
+      <img src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg" />
+      <h3>Rahul Sharma</h3>
+      <p>Founder & CEO</p>
+    </div>
+ 
+    <div class="team-card">
+      <img src="https://images.pexels.com/photos/3184406/pexels-photo-3184406.jpeg" />
+      <h3>Priya Verma</h3>
+      <p>Creative Director</p>
+    </div>
+ 
+    <div class="team-card">
+      <img src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg" />
+      <h3>Aman Singh</h3>
+      <p>Lead Developer</p>
+    </div>
+  </div>
+</div>
+ 
+</body>
+</html>
+ 
+ 
