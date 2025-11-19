@@ -1,183 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Sample Page</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        /* ================================
-           General Styles
-        ================================ */
-        body {
-            font-family: Arial, sans-serif;
-            scroll-behavior: smooth;
-            margin: 0;
-        }
-
-        h2 {
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        section {
-            padding: 80px 0;
-            position: relative;
-            color: #fff;
-        }
-
-        section::before {
-            content: "";
-            position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: rgba(0,0,0,0.5); /* dark overlay for readability */
-            z-index: 1;
-        }
-
-        .container {
-            position: relative;
-            z-index: 2;
-        }
-
-        /* ================================
-           Audio Player Section
-        ================================ */
-        .audio-section {
-            background: url('https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-            text-align: center;
-        }
-
-        .audio-section audio {
-            margin-top: 20px;
-            width: 80%;
-        }
-
-        /* ================================
-           Video Player Section
-        ================================ */
-        .video-section {
-            background: url('https://images.pexels.com/photos/854210/pexels-photo-854210.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-            text-align: center;
-        }
-
-        .video-section video {
-            width: 80%;
-            max-width: 720px;
-            border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-        .video-section p.transcription-note {
-            font-size: 1rem;
-            margin-top: 15px;
-        }
-
-        /* ================================
-           Image Section (Carousel with Background)
-        ================================ */
-        .image-section {
-            text-align: center;
-            background: url('https://images.pexels.com/photos/3184655/pexels-photo-3184655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1') no-repeat center center/cover;
-        }
-
-        .image-section h2,
-        .image-section p {
-            margin-bottom: 40px;
-        }
-
-        .image-section .carousel-inner img {
-            height: 400px;
-            object-fit: cover;
-            border-radius: 12px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .image-section .carousel-inner img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-        }
-
-        /* ================================
-           Responsive Styles
-        ================================ */
-        @media (max-width: 768px) {
-            .audio-section audio,
-            .video-section video {
-                width: 95%;
-            }
-            .image-section .carousel-inner img {
-                height: 250px;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Media Sample Page — Smooth</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+  *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+  body{
+    background:#0f172a;
+    color:#fff;
+    overflow-x:hidden;
+    position:relative;
+  }
+  h2{text-align:center; font-weight:700; margin-bottom:20px; color:#0ff;}
+  section{position:relative; padding:80px 0; overflow:hidden;}
+  section::before{
+    content:""; position:absolute; top:0; left:0; width:100%; height:100%;
+    background:rgba(15,23,42,0.6); z-index:1;
+  }
+  .container{position:relative; z-index:2;}
+ 
+  /* Canvas Points Background */
+  #pointsCanvas{
+    position:absolute;
+    top:0; left:0;
+    width:100%; height:100%;
+    z-index:0;
+  }
+ 
+  /* Glass Cards */
+  .glass-card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(15px);
+    border-radius:20px;
+    padding:30px;
+    margin:20px auto;
+    max-width:900px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.3);
+    transition:transform 0.4s, box-shadow 0.4s;
+  }
+  .glass-card:hover{transform:scale(1.03); box-shadow:0 15px 50px rgba(0,0,0,0.5);}
+  .glass-card h3{color:#facc15; margin-bottom:15px;}
+  .glass-card p{color:#e2e8f0;}
+ 
+  /* Audio Section */
+  .audio-section{ text-align:center;}
+  .audio-section audio{width:80%; max-width:600px; margin-top:20px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.4);}
+ 
+  /* Video Section */
+  .video-section{ text-align:center;}
+  .video-section video{width:80%; max-width:720px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.4);}
+  .video-section p.transcription-note{margin-top:15px; font-size:1rem; color:#f0f0f0;}
+ 
+  /* Image Carousel Section */
+  .image-section{ text-align:center;}
+  .carousel-inner img{height:400px; object-fit:cover; border-radius:12px; transition:transform 0.3s, box-shadow 0.3s;}
+  .carousel-inner img:hover{transform:scale(1.05); box-shadow:0 12px 35px rgba(0,0,0,0.4);}
+ 
+  /* Responsive */
+  @media(max-width:768px){
+    .audio-section audio,.video-section video{width:95%;}
+    .carousel-inner img{height:250px;}
+  }
+</style>
 </head>
 <body>
-
-<!-- Audio Sample Section -->
+ 
+<canvas id="pointsCanvas"></canvas>
+ 
+<!-- Audio Section -->
 <section class="audio-section">
-    <div class="container">
-        <h2>Audio Sample</h2>
-        <p>Listen to a sample audio file below:</p>
-        <audio controls>
-            <source src="sempal/01.wav" type="audio/mpeg">
-            Your browser does not support the audio element.
-        </audio>
-    </div>
+  <div class="container glass-card">
+    <h2>Audio Sample</h2>
+    <p>Listen to a sample audio file below:</p>
+    <audio controls>
+      <source src="sempal/01.wav" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
 </section>
-
-<!-- Video Sample Section -->
+ 
+<!-- Video Section -->
 <section class="video-section">
-    <div class="container">
-        <h2>Video Sample</h2>
-        <p>Watch a sample video below:</p>
-        <video controls>
-            <source src="sempal/vodeo.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-        <p class="transcription-note">
-            We also provide professional transcription services for this video and its audio.
-        </p>
-    </div>
+  <div class="container glass-card">
+    <h2>Video Sample</h2>
+    <p>Watch a sample video below:</p>
+    <video controls>
+      <source src="sempal/vodeo.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <p class="transcription-note">We also provide professional transcription services for this video and its audio.</p>
+  </div>
 </section>
-
-<!-- Image Sample Section (Carousel) -->
+ 
+<!-- Image Carousel Section -->
 <section class="image-section">
-    <div class="container">
-        <h2>Image Sample</h2>
-        <p>Here are some sample images:</p>
-
-        <!-- Carousel -->
-        <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="https://images.pexels.com/photos/3184655/pexels-photo-3184655.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Sample Image 1">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Sample Image 2">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/3861958/pexels-photo-3861958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Sample Image 3">
-                </div>
-                <div class="carousel-item">
-                    <img src="https://images.pexels.com/photos/3184423/pexels-photo-3184423.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" class="d-block w-100" alt="Sample Image 4">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
+  <div class="container glass-card">
+    <h2>Image Sample</h2>
+    <p>Here are some unique sample images:</p>
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" class="d-block w-100" alt="Sample Image 1">
         </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" class="d-block w-100" alt="Sample Image 2">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/3156381/pexels-photo-3156381.jpeg" class="d-block w-100" alt="Sample Image 3">
+        </div>
+        <div class="carousel-item">
+          <img src="https://images.pexels.com/photos/313081/pexels-photo-313081.jpeg" class="d-block w-100" alt="Sample Image 4">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
     </div>
+  </div>
 </section>
-
-<!-- Bootstrap JS Bundle -->
+ 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Canvas Points Background Animation
+  const canvas = document.getElementById('pointsCanvas');
+  const ctx = canvas.getContext('2d');
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+ 
+  const points = [];
+  const count = 100;
+  for(let i=0;i<count;i++){
+    points.push({
+      x: Math.random()*w,
+      y: Math.random()*h,
+      vx: (Math.random()-0.5)*0.6,
+      vy: (Math.random()-0.5)*0.6,
+      r: 2+Math.random()*2
+    });
+  }
+ 
+  function animatePoints(){
+    ctx.clearRect(0,0,w,h);
+    points.forEach(p=>{
+      ctx.beginPath();
+      ctx.fillStyle='cyan';
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fill();
+ 
+      p.x += p.vx;
+      p.y += p.vy;
+ 
+      if(p.x<0 || p.x>w) p.vx*=-1;
+      if(p.y<0 || p.y>h) p.vy*=-1;
+    });
+    requestAnimationFrame(animatePoints);
+  }
+  animatePoints();
+ 
+  window.addEventListener('resize', ()=>{
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+</script>
 </body>
 </html>
+ 
+ 
