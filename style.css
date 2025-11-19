@@ -260,7 +260,9 @@ body {
   background: linear-gradient(135deg, #c217a0, #02f4cc);
 } 
 */
-
+#projects{
+ background: linear-gradient(to bottom right, #a7d7ff, #caffcc);
+}
 #projects h2 span {
   color: #0d6efd;
 }
