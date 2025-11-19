@@ -260,48 +260,51 @@ body {
   background: linear-gradient(135deg, #c217a0, #02f4cc);
 } 
 */
-#projects{
- background: linear-gradient(to bottom right, #a7d7ff, #caffcc);
+#projects {
+  background: linear-gradient(135deg, #02f4cc, #c217a0);
+  padding-top: 60px;
+  padding-bottom: 60px;
+  border-radius: 20px;
 }
+ 
 #projects h2 span {
   color: #0d6efd;
 }
-
+ 
 .project-row {
   transition: all 0.4s ease;
 }
-
+ 
 .project-img img {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
   width: 100%;
 }
-
+ 
 .project-img img:hover {
   transform: scale(1.05);
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
 }
-
+ 
 .project-text h4 {
   margin-bottom: 15px;
 }
-
+ 
 .project-text p {
   font-size: 0.95rem;
   margin-bottom: 20px;
   line-height: 1.6;
 }
-
+ 
 .project-text .btn {
   background: linear-gradient(90deg, #b835f5, #c217a0);
   border: none;
   transition: all 0.3s ease;
 }
-
+ 
 .project-text .btn:hover {
   transform: translateY(-2px);
   background: linear-gradient(90deg, #d939df, #df1294);
 }
-
 /* Responsive */
 @media (max-width: 992px) {
     /* FIX 3: Added extra padding for the Hero section on smaller devices */
