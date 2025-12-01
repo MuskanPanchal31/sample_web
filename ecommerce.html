@@ -1,189 +1,72 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our project</title>
- 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
- 
-<style>
-/* ------------------- GLOBAL ------------------- */
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
-}
-body{
-  background:#000;
-  color:#fff;
-  overflow-x:hidden;
-  position:relative;
-}
- 
-/* ------------------- BACKGROUND CANVAS ------------------- */
-#bgCanvas{
-  position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  z-index:-1;
-}
- 
-/* ------------------- HERO ------------------- */
-.hero{
-  padding:120px 50px 80px;
-  text-align:center;
-  z-index:1;
-  position:relative;
-}
-.hero h1{
-  font-size:55px;
-  font-weight:700;
-  margin-bottom:15px;
-  letter-spacing:2px;
-  text-transform:uppercase;
-  background:linear-gradient(45deg,#00e5ff,#0077ff,#7c4dff);
-  -webkit-background-clip:text;
-  color:transparent;
-}
-.hero p{
-  max-width:700px;
-  margin:auto;
-  font-size:18px;
-  opacity:0.9;
-}
- 
-/* ------------------- GLASS SECTIONS ------------------- */
-.glass-box{
-  width:90%;
-  margin:60px auto;
-  padding:40px;
-  background:rgba(255,255,255,0.06);
-  backdrop-filter:blur(15px);
-  border-radius:20px;
-  border:1px solid rgba(255,255,255,0.2);
-  animation:fadeIn 1.5s ease;
-}
- 
-@keyframes fadeIn {
-  from{ opacity:0; transform:translateY(30px); }
-  to{ opacity:1; transform:translateY(0); }
-}
- 
-.section-title{
-  font-size:32px;
-  font-weight:600;
-  margin-bottom:15px;
-}
- 
-/* ------------------- DATA CARDS ------------------- */
-.data-grid{
-  margin-top:25px;
-  display:grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap:25px;
-}
-.data-card{
-  background:rgba(255,255,255,0.08);
-  padding:20px;
-  border-radius:18px;
-  transition:0.4s;
-  backdrop-filter:blur(10px);
-}
-.data-card:hover{
-  transform:translateY(-8px);
-  background:rgba(255,255,255,0.15);
-}
-.data-card img{
-  width:100%;
-  border-radius:15px;
-  margin-bottom:15px;
-}
- 
-/* ------------------- ANALYTICS IMAGE ------------------- */
-.analytics-img{
-  width:100%;
-  border-radius:20px;
-  margin-top:25px;
-  box-shadow:0 0 25px rgba(0,255,255,0.4);
-}
- 
-/* ------------------- FUTURE VISION ------------------- */
-.card{
-  padding:25px;
-  background:rgba(255,255,255,0.08);
-  border-radius:15px;
-  margin-top:15px;
-}
-.card:hover{
-  transform:translateY(-10px);
-  background:rgba(255,255,255,0.18);
-}
- 
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Data Services</title>
+  <style>
+    :root{
+      --bg:#f5f7fb;
+      --card:#ffffff;
+      --accent:#0b7285;
+      --muted:#6b7280;
+      --radius:14px;
+      font-family: Inter, sans-serif;
+    }
+    body{margin:0;background:var(--bg);padding:24px;}
+    .container{max-width:900px;margin:auto;}
+
+    /* HERO */
+    .hero{background:var(--card);padding:40px;border-radius:var(--radius);box-shadow:0 6px 18px rgba(0,0,0,0.07);}
+    .hero h1{margin:0 0 12px;font-size:32px;color:#0f172a;}
+    .hero p{margin:0 0 22px;color:var(--muted);font-size:16px;line-height:1.6;}
+
+    .btn{background:var(--accent);color:#fff;padding:12px 22px;border-radius:10px;text-decoration:none;font-weight:700;display:inline-block;}
+
+    /* FEATURES */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:26px;}
+    .feature{background:var(--card);padding:18px;border-radius:var(--radius);box-shadow:0 4px 12px rgba(0,0,0,0.05);}
+    .feature strong{display:block;margin-bottom:6px;font-size:16px;color:#0f172a;}
+    .feature span{color:var(--muted);font-size:14px;}
+
+    @media(max-width:720px){
+      .features{grid-template-columns:1fr;}
+      .hero{padding:28px}
+    }
+  </style>
 </head>
 <body>
- 
-<canvas id="bgCanvas"></canvas>
- 
-<!-- ================= HERO ================= -->
-<div class="hero">
-  <h1>Data Collection</h1>
-  <p>
-    Advanced E-Commerce Analytics • User Behaviour Tracking • Growth Insights  
-  </p>
-</div>
- 
-<!-- ================= WHAT WE COLLECT ================= -->
-<div class="glass-box">
-  <h2 class="section-title">What Data We Collect?</h2>
- 
-  <div class="data-grid">
-    <div class="data-card">
-      <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&am…"/>
-      <h3>Customer Behaviour</h3>
-      <p>How customers navigate, click, search, and interact with your products.</p>
-    </div>
- 
-    <div class="data-card">
-      <img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&am…" />
-      <h3>Product Analytics</h3>
-      <p>Top-selling, trending, repeat-buy items & complete product lifecycle tracking.</p>
-    </div>
- 
-    <div class="data-card">
-      <img src="https://images.pexels.com/photos/3184290/pexels-photo-3184290.jpeg?auto=compress&cs=tinysrgb&am…" />
-      <h3>Sales & Revenue Insights</h3>
-      <p>Conversion rate, average order value, customer retention & revenue tracking.</p>
-    </div>
+  <div class="container">
+
+    <section class="hero">
+      <h1>Data Collection, Image OCR & Multi-Language Subtitle Processing</h1>
+      <p>
+        We create high-quality datasets for AI training: human image recognition, object annotation, multilingual subtitle machine reading,
+        printed & handwritten OCR, and structured document processing.
+      </p>
+
+      <a href="#contact" class="btn">Contact Us</a>
+
+      <div class="features">
+        <div class="feature">
+          <strong>AI Data Collection</strong>
+          <span>Custom image, video & text datasets for ML training.</span>
+        </div>
+        <div class="feature">
+          <strong>Image OCR</strong>
+          <span>Printed/handwritten text extraction, IDs, receipts, forms.</span>
+        </div>
+        <div class="feature">
+          <strong>Subtitles (All Languages)</strong>
+          <span>Subtitle extraction, alignment, timestamp correction.</span>
+        </div>
+      </div>
+    </section>
+
   </div>
-</div>
- 
-<!-- ================= HOW DATA HELPS ================= -->
-<div class="glass-box">
-  <h2 class="section-title">How This Data Helps Your Business?</h2>
- 
-  <img class="analytics-img" src="https://images.pexels.com/photos/669619/pexels-photo-669619.jpeg?auto=compress&cs=tinysrgb&w=1200%22"/>
- 
-  <div class="card">
-    <h3>Better Decisions</h3>
-    <p>Analytics helps you pick the right products and marketing strategies.</p>
-  </div>
- 
-  <div class="card">
-    <h3>Boost Sales</h3>
-    <p>Data insights reveal customer interests & help you increase conversions.</p>
-  </div>
- 
-  <div class="card">
-    <h3>Grow Faster</h3>
-    <p>Understand market patterns, user needs, and scale your business confidently.</p>
-  </div>
- 
-</div>
+</body>
+</html>
+
  
 <script>
 // ================= LINES + NODES BACKGROUND =================

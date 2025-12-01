@@ -210,7 +210,57 @@ body {
 .data-item:first-child {
     border-left: none;
 }
+
+  .annotation-section{
+    background:#f7fafc;
+    padding:60px 20px;
+    font-family:Arial, sans-serif;
+  }
+  .annotation-container{
+    max-width:1100px;
+    margin:auto;
+    text-align:center;
+  }
+  .annotation-grid{
+    margin-top:40px;
+    display:grid;
+    gap:20px;
+    grid-template-columns:1fr;
+  }
+  @media(min-width:768px){
+    .annotation-grid{
+      grid-template-columns:repeat(2,1fr);
+    }
+  }
+  @media(min-width:1024px){
+    .annotation-grid{
+      grid-template-columns:repeat(4,1fr);
+    }
+  }
+  .annotation-card{
+    background:white;
+    padding:25px;
+    border-radius:12px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    transition:.2s;
+    height:100%;
+  }
+  .annotation-card:hover{
+    transform:translateY(-6px);
+  }
+  .annotation-title{
+    font-size:18px;
+    font-weight:bold;
+    margin-bottom:10px;
+    color: #17a2b8;
+  }
+  .annotation-desc{
+    font-size:14px;
+    color:#555;
+    line-height:1.5;
+  }
 </style>
+
 <body>
 
     <div class="page-container">
@@ -222,11 +272,9 @@ body {
                     <div class="custom-card card-small-hero p-4 h-100 d-flex align-items-center justify-content-between">
                         <div>
                             <p class="card-title-lg">Data Annotation</p>
-                            <p class="card-description small">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                            <p class="card-description small">Data Annotation is the process of labeling and enhancing raw data—such as text, images, audio, and video</p>
                         </div>
-                        <div class="visa-icon-circle">
-                            <i class="fab fa-cc-visa"></i>
-                        </div>
+                       
                     </div>
                 </div>
 
@@ -234,15 +282,10 @@ body {
                     <div class="custom-card card-small-hero p-4 h-100 d-flex justify-content-between">
                         <div>
                             <p class="card-title-lg">Data Transcription</p>
-                            <p class="card-description small">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                            <p class="card-description small">Data Transcription is the process of converting audio and video recordings into accurate,
+                                 structured text. It enables businesses</p>
                         </div>
-                        <div class="analytics-mini-chart p-2">
-                            <span class="small text-muted">For AI Model</span>
-                            <div class="mini-bar-chart">
-                                </div>
-                            <p class="total-activity mb-1">326</p>
-                            <a href="#" class="btn btn-sm btn-activity">All Activity</a>
-                        </div>
+                       
                     </div>
                 </div>
             </div>
@@ -253,35 +296,28 @@ body {
                     <div class="custom-card p-4">
                         <div class="d-flex justify-content-between align-items-center mb-3">
                             <h5 class="fw-bold">Overview</h5>
-                            <span class="badge text-bg-light p-2 small">Last 7 days</span>
+                           
                         </div>
                         <div class="chart-area mb-4">
                             <img src="project image/anno.png" alt="Overview Chart" class="img-fluid">
                         </div>
-                        <div class="easy-payment-bar d-flex justify-content-between align-items-center p-3">
-                            <div class="d-flex align-items-center">
-                                <div class="payment-icon-small me-3"><i class="fas fa-credit-card"></i></div>
-                                <div>
-                                    <p class="small text-muted mb-0">Key Features:</p>
-                                    <p class="mb-0 fw-semibold">Accurate labeling of images, text, audio, and video</p>
-                                </div>
-                            </div>
-                            <a href="#" class="btn btn-sm btn-link fw-semibold">Learn More</a>
-                        </div>
+                      
                     </div>
                 </div>
 
                 <div class="col-lg-6 d-flex align-items-stretch">
                     <div class="text-block p-4">
-                        <p class="text-uppercase small fw-semibold text-primary">Easy Admin</p>
+                        
                         <h2 class="mb-3 fw-bold">Take the complexity out of Data Annotation</h2>
                         <p class="text-muted mb-4">We have worked on high-quality data annotation for various AI and machine learning projects.
 Our team accurately labels image, text, audio, and video data to help models learn effectively.
 We focus on accuracy, consistency, and quality in every annotation task.
 Our annotation work helps AI systems become smarter, faster, and more reliable.</p>
                         <div class="row">
-                            <div class="col-6"><i class="fas fa-check-circle text-primary me-2"></i> Reliable </div>
-                            <div class="col-6"><i class="fas fa-check-circle text-primary me-2"></i> 100% Accuracy</div>
+                            <div class="col-3"><i class="fas fa-check-circle text-primary me-2"></i> Image Annotation </div>
+                            <div class="col-3"><i class="fas fa-check-circle text-primary me-2"></i> Text Annotation</div>
+                            <div class="col-3"><i class="fas fa-check-circle text-primary me-2"></i> Audio Annotation </div>
+                            <div class="col-3"><i class="fas fa-check-circle text-primary me-2"></i> Video Annotation</div>
                         </div>
                     </div>
                 </div>
@@ -291,7 +327,7 @@ Our annotation work helps AI systems become smarter, faster, and more reliable.<
                 
                 <div class="col-lg-6">
                     <div class="text-block-large p-4">
-                        <p class="text-uppercase small fw-semibold text-primary">Ready to Scale</p>
+                        
                         <h2 class="mb-3 fw-bold">Great overview of your entire company</h2>
                         <p class="text-muted mb-4">Get a clear, powerful snapshot of who you are and what you deliver. 
                           We help you present your company’s mission, services, and strengths in a clean, professional, and engaging way. From showcasing your expertise to highlighting your value, our content ensures your audience understands your business at a glance—simple, effective, and impactful.</p>
@@ -316,12 +352,10 @@ Our annotation work helps AI systems become smarter, faster, and more reliable.<
                     <div class="custom-card prox-card p-4 text-center">
                         <h5 class="fw-bold mb-4">We have a own QC expert</h5>
                         <div class="avatar-group mb-3">
-                            <img src="https://i.pravatar.cc/50?img=1" alt="Avatar" class="avatar">
-                            <img src="https://i.pravatar.cc/50?img=2" alt="Avatar" class="avatar">
-                            <img src="https://i.pravatar.cc/50?img=3" alt="Avatar" class="avatar">
-                            <img src="https://i.pravatar.cc/50?img=4" alt="Avatar" class="avatar">
-                            <img src="https://i.pravatar.cc/50?img=5" alt="Avatar" class="avatar">
-                        </div>
+                            <img src="" alt="Avatar" class="avatar">
+                           
+                        </div>  
+                        
                         <p class="small text-muted mb-4">Help your info updated to increase the performance.</p>
                         
                         <div class="d-flex justify-content-around mb-4 stats-boxes">
@@ -346,28 +380,52 @@ Our annotation work helps AI systems become smarter, faster, and more reliable.<
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-12">
-                    <div class="footer-cta d-flex align-items-center justify-content-between p-4">
-                        <div class="text-white-section d-flex align-items-center">
-                            <div class="quote-box me-4">
-                                <p class="small mb-0">"We help real people do more with money"</p>
-                            </div>
-                        </div>
-                        <div class="data-strip d-flex">
-                            <div class="data-item">
-                                <h4 class="mb-0 fw-bold">98%</h4>
-                            </div>
-                            <div class="data-item">
-                                <h4 class="mb-0 fw-bold">30%</h4>
-                            </div>
-                            <div class="data-item">
-                                <h4 class="mb-0 fw-bold">7.6M</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <section class="annotation-section" id="annotation-services">
+  <div class="annotation-container">
+    <h2 style="font-size:28px; margin-bottom:10px; color: #17a2b8;">
+      Annotation & Transcription Services
+    </h2>
+    <p style="max-width:700px; margin:auto; color:#555;">
+      High-quality annotation solutions to train and improve your AI and machine learning models.
+    </p>
+
+    <div class="annotation-grid">
+
+      <!-- Image Annotation -->
+      <div class="annotation-card">
+        <h3 class="annotation-title">Image Annotation</h3>
+        <p class="annotation-desc">
+          Bounding boxes, segmentation, and object detection for computer vision projects.
+        </p>
+      </div>
+
+      <!-- Text Annotation -->
+      <div class="annotation-card">
+        <h3 class="annotation-title">Text Annotation</h3>
+        <p class="annotation-desc">
+          Sentiment analysis, intent labeling, and entity tagging for NLP-based applications.
+        </p>
+      </div>
+
+      <!-- Audio Annotation -->
+      <div class="annotation-card">
+        <h3 class="annotation-title">Audio Annotation</h3>
+        <p class="annotation-desc">
+          Transcription, speaker identification, and audio tagging for speech AI.
+        </p>
+      </div>
+
+      <!-- Video Annotation -->
+      <div class="annotation-card">
+        <h3 class="annotation-title">Video Annotation</h3>
+        <p class="annotation-desc">
+          Frame-by-frame labeling for detecting objects and activities in video data.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
 
         </div>
     </div>

@@ -262,9 +262,9 @@ body {
 } 
 */
 #projects {
-  background: linear-gradient(135deg, #02f4cc, #c217a0);
+  background: linear-gradient(135deg, #b5fff3, #ff9d92);
   padding-top: 60px;
-  padding-bottom: 60px;
+  padding-bottom: 50px;
   border-radius: 20px;
 }
  
@@ -278,7 +278,7 @@ body {
  
 .project-img img {
   transition: transform 0.5s ease, box-shadow 0.5s ease;
-  width: 100%;
+  width: 60%;
 }
  
 .project-img img:hover {
@@ -296,16 +296,6 @@ body {
   line-height: 1.6;
 }
  
-.project-text .btn {
-  background: linear-gradient(90deg, #b835f5, #c217a0);
-  border: none;
-  transition: all 0.3s ease;
-}
- 
-.project-text .btn:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(90deg, #d939df, #df1294);
-}
 /* Responsive */
 @media (max-width: 992px) {
     /* FIX 3: Added extra padding for the Hero section on smaller devices */
@@ -320,7 +310,7 @@ body {
     text-align: center;
   }
   .project-row .project-text {
-    margin-top: 20px;
+    margin-top: 10px;
   }
 }
 
