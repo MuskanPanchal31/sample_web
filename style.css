@@ -3,7 +3,7 @@
 ================================ */
 .custom-navbar {
   /* FIX 1: Corrected color from #0505e to #05050e */
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background: linear-gradient(135deg, #f2f5f7, #ffffff, #c9e9ff);
   background-size: 100% 100%;
   animation: gradientShift 8s ease infinite;
   transition: all 0.3s ease;
@@ -17,7 +17,7 @@
 
 /* Navbar Links */
 .navbar .nav-link {
-  color: #f8f9fa !important;
+  color: #010101 !important;
   font-weight: 500;
   margin: 0 8px;
   transition: color 0.3s ease, transform 0.3s ease;
@@ -32,6 +32,7 @@
 .navbar-brand {
   font-size: 1.3rem;
   letter-spacing: 0.5px;
+  color: #000;
 }
 
 /* Smooth Scroll */
