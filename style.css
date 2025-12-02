@@ -284,11 +284,11 @@ body {
 
     /* Project Row Styling */
     .project-row {
-        margin-bottom: 4rem !important; /* Increase space between projects */
+        margin-bottom: 2rem !important; /* Increase space between projects */
         transition: transform 0.3s ease, box-shadow 0.3s ease;
-        padding: 20px; /* Padding for visual separation */
+        padding: 10px; /* Padding for visual separation */
         border-radius: 12px; /* Rounded corners for the container */
-        background-color:transparent; /* White background for each project row */
+        background-color:transparent; /* */
     }
 
     .project-row:hover {
@@ -301,7 +301,7 @@ body {
         height: 250px; /* Fixed height for consistency */
         object-fit: cover; /* Ensures images cover the area without distortion */
         border-radius: 8px !important;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Image shadow */
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1); /* Image shadow */
     }
 
     /* Project Text Styling */
