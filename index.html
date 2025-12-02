@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
   <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/x-icon" href="index image/logo1.png">
+
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top shadow-sm">
@@ -367,10 +368,26 @@ Feel free to reach out anytime — your ideas deserve the best execution!
     </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
-
-    
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"> </script>
   
+<script>
+  // Select the form
+  const contactForm = document.querySelector('.contact-form');
+
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault(); // Prevent default form submission
+
+    // Get form values (optional, for personalized message)
+    const firstName = contactForm.querySelector('input[placeholder="First Name"]').value;
+    const lastName = contactForm.querySelector('input[placeholder="Last Name"]').value;
+
+    // Display popup
+    alert(`Thank you, ${firstName} ${lastName}! Your message has been received. We will contact you soon.`);
+
+    // Reset the form after submission
+    contactForm.reset();
+  });
+</script>
+
 </body>
 </html>
