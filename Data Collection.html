@@ -175,6 +175,150 @@ section p, .security-section p, .quality-text p {
   .card p { font-size:0.85rem; }
   .quality-text h2 { font-size:1.4rem; }
 }
+ :root{
+    --amvik-bg: #0f1724;
+    --card-bg: #0b1220;
+    --accent: #00c2a8;
+    --muted: #9aa6b2;
+    --radius: 12px;
+    --width: 1000px;
+  }
+
+  .amvik-asr-section {
+    max-width: var(--width);
+    margin: 40px auto;
+    padding: 24px;
+    box-sizing: border-box;
+  }
+
+ #amvik-title{
+font-size: 28px;
+text-align: center;
+}
+  .amvik-card {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+    border-radius: var(--radius);
+    padding: 20px;
+    align-items: center;
+    box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+    border: 1px solid rgba(255,255,255,0.03);
+  }
+
+  /* Left content */
+  .amvik-card .amvik-info h2 {
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    margin: 0 0 10px 0;
+    font-size: 1.45rem;
+    color: var(--accent);
+    letter-spacing: 0.2px;
+  }
+
+  .amvik-card .amvik-info p.lead {
+    margin: 0 0 14px 0;
+    color: #17191a;
+    font-weight: 500;
+    line-height: 1.42;
+  }
+
+  .amvik-features {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+
+  .feature-pill {
+    background: rgba(255,255,255,0.03);
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 0.86rem;
+    display: inline-flex;
+    gap: 8px;
+    align-items: center;
+    border: 1px solid rgba(255,255,255,0.02);
+  }
+
+  .feature-pill svg { width: 14px; height: 14px; opacity: 0.95; }
+
+  .amvik-cta {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: linear-gradient(90deg, var(--accent), #00e0bf);
+    color: #012026;
+    padding: 10px 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: 0 6px 18px rgba(0,194,168,0.12);
+  }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--muted);
+    padding: 8px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.03);
+    font-weight: 600;
+  }
+
+  /* Right visual card */
+  .amvik-visual {
+    background: linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.02));
+    border-radius: 10px;
+    padding: 12px;
+    display: grid;
+    gap: 10px;
+    align-items: start;
+    justify-items: center;
+  }
+
+  .device-mock {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #07101a;
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  }
+
+  .device-mock .screen {
+    padding: 14px;
+    box-sizing: border-box;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    color: #d9f7f0;
+    font-weight: 600;
+    font-family: monospace;
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.2), rgba(255,255,255,0.02));
+  }
+
+  .small-meta { font-size: 0.78rem; color: var(--muted); }
+
+  /* Responsive */
+  @media (max-width: 880px){
+    .amvik-card {
+      grid-template-columns: 1fr;
+      padding: 18px;
+      gap: 16px;
+    }
+    .amvik-visual { justify-self: stretch; }
+    .device-mock { max-width: 100%; }
+  }
 </style>
 </head>
 <body>
@@ -189,6 +333,47 @@ section p, .security-section p, .quality-text p {
     <img src="Data Collection/3.png" alt="data collection">
   </div>
 </div>
+<!-- AMVIK SECTION -->
+<section class="amvik-asr-section" aria-labelledby="amvik-title">
+  <div class="amvik-card" role="region" aria-label="AMVIK ASR Tool description">
+    <div class="amvik-info">
+      <h2 id="amvik-title">AMVIK ASR Tool</h2>
+      <p class="lead">
+       Accurate, fast Automatic Speech Recognition (ASR) for multilingual audio — designed for recording, transcribing and building voice datasets quickly.
+It streamlines your entire speech-to-text workflow with clean UI, real-time processing, and dataset-friendly export formats.
+      <div class="amvik-features" aria-hidden="false">
+        <span class="feature-pill">
+          <!-- simple mic SVG -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 1v11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M5 10a7 7 0 0014 0" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Real-time recording
+        </span>
+
+        <span class="feature-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M3 12h18" stroke-width="2" stroke-linecap="round"/></svg>
+          High accuracy transcripts
+        </span>
+        <span class="feature-pill">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M12 2l3 7H9l3-7z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Multilingual support
+        </span>
+      </div>
+      
+    </div>
+
+    <div class="amvik-visual" aria-hidden="true">
+      <div class="device-mock" title="AMVIK ASR preview">
+        <div class="screen">
+          <div style="font-size:0.95rem;">Recording...</div>
+          <div style="font-size:0.78rem; opacity:0.9;">00:02:14</div>
+          <div style="font-size:0.82rem; opacity:0.85; margin-top:6px; text-align:center;">
+            "Namaste — this is AMVIK ASR realtime preview"
+          </div>
+        </div>
+      </div>
+      <div class="small-meta">Supports WAV / MP3 • Export SRT / TXT</div>
+    </div>
+  </div>
+</section>
 
 <!-- DATA COLLECTION TYPES -->
 <section class="features">
@@ -282,22 +467,8 @@ section p, .security-section p, .quality-text p {
   </div>
 </div>
 
-<!-- QUALITY SECTION -->
-<div class="quality-section">
-  <div class="quality-text">
-    <h2><i class="fa-solid fa-check-double"></i> Time Period & Quality Assurance</h2>
-    <p>Every dataset undergoes strict review and validation for accuracy, completeness, and timing consistency. We ensure all video and audio clips meet the defined duration and clarity standards.</p>
-    <ul>
-      <li><i class="fa-solid fa-clock"></i> Defined collection time periods for consistency</li>
-      <li><i class="fa-solid fa-eye"></i> Manual inspection and AI validation of all samples</li>
-      <li><i class="fa-solid fa-list-check"></i> Detailed QA reports for each batch of data</li>
-      <li><i class="fa-solid fa-award"></i> 99% accuracy target with verified metadata</li>
-    </ul>
-  </div>
-  <div class="quality-image">
-    <img src="Data Collection/6.png" alt="Quality Assurance">
-  </div>
-</div>
+
+
 
 </body>
 </html>
