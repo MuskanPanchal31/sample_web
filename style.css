@@ -237,7 +237,7 @@ body {
   bottom: -2px;
   width: 0%;
   height: 2px;
-  background: linear-gradient(135deg, #02f4cc, #c217a0); /* updated gradient */
+  background: linear-gradient(135deg, #c0fff4, #ff93e9); /* updated gradient */
   transition: width 0.3s ease;
 }
 
@@ -248,7 +248,7 @@ body {
 /* Hover Motion + Gradient change */
 .know-more-btn:hover {
   transform: translateY(-2px);
-  background: linear-gradient(135deg, #c217a0, #02f4cc); /* hover gradient */
+  background: linear-gradient(135deg, #ff86e7, #8effec); /* hover gradient */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -261,40 +261,85 @@ body {
   background: linear-gradient(135deg, #c217a0, #02f4cc);
 } 
 */
-#projects {
-  background: linear-gradient(135deg, #b5fff3, #ff9d92);
-  padding-top: 60px;
-  padding-bottom: 50px;
-  border-radius: 20px;
-}
- 
-#projects h2 span {
-  color: #0d6efd;
-}
- 
-.project-row {
-  transition: all 0.4s ease;
-}
- 
-.project-img img {
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
-  width: 60%;
-}
- 
-.project-img img:hover {
-  transform: scale(1.05);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
-}
- 
-.project-text h4 {
-  margin-bottom: 15px;
-}
- 
-.project-text p {
-  font-size: 0.95rem;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
+/* Custom Styles for the Projects Section */
+    #projects {
+        background-color: #f8f9fa; /* Light background for the section */
+        padding-top: 5rem !important;
+        padding-bottom: 5rem !important;
+        background: linear-gradient(135deg, #ea94d9, #bdfff4);
+    }
+
+    /* Style for the main heading and separator */
+    .text-dark {
+        color: #212529 !important;
+    }
+
+    .text-primary {
+        color: #0d6efd !important;
+    }
+
+    .fw-bold {
+        font-weight: 700 !important;
+    }
+
+    /* Project Row Styling */
+    .project-row {
+        margin-bottom: 4rem !important; /* Increase space between projects */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        padding: 20px; /* Padding for visual separation */
+        border-radius: 12px; /* Rounded corners for the container */
+        background-color:transparent; /* White background for each project row */
+    }
+
+    .project-row:hover {
+        transform: translateY(-5px); /* Lift effect on hover */
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    }
+
+    /* Project Image Styling */
+    .project-img img {
+        height: 250px; /* Fixed height for consistency */
+        object-fit: cover; /* Ensures images cover the area without distortion */
+        border-radius: 8px !important;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Image shadow */
+    }
+
+    /* Project Text Styling */
+    .project-text {
+        padding: 20px;
+    }
+
+    .project-text h4 {
+        color: #0d6efd; /* Primary color for the title */
+        font-size: 1.50rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-text p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+
+    /* Ensure text alignment is consistent on smaller screens */
+    @media (max-width: 767.98px) {
+        .project-text {
+            text-align: center;
+        }
+
+        .project-img {
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-img img {
+            width: 100%; /* Full width on mobile */
+            height: auto; /* Auto height on mobile */
+        }
+
+        .project-row {
+            margin-bottom: 3rem !important;
+        }
+    }
+
  
 /* Responsive */
 @media (max-width: 992px) {
