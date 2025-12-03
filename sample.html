@@ -5,19 +5,35 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Sample</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+<link rel="stylesheet" href="style.css">
 <style>
-  *{margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+  *
+  {
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+    font-family:'Poppins', sans-serif;}
+  
   body{
     background:#0f172a;
     color:#fff;
     overflow-x:hidden;
     position:relative;
   }
-  h2{text-align:center; font-weight:700; margin-bottom:20px; color:#0ff;}
+  h2
+  {text-align:center; 
+    font-weight:700; 
+ margin-bottom: 25px;
+    color:#0ff;
+    font-size: 40px;
+   
+  }
+
   section{position:relative; padding:80px 0; overflow:hidden;}
   section::before{
     content:""; position:absolute; top:0; left:0; width:100%; height:100%;
-    background:rgba(15,23,42,0.6); z-index:1;
+    background:transparent; z-index:1;
   }
   .container{position:relative; z-index:2;}
  
@@ -30,102 +46,438 @@
   }
  
   /* Glass Cards */
-  .glass-card{
+  .aglass-card{
+    text-align: center;
     background:rgba(255,255,255,0.15);
     backdrop-filter:blur(15px);
     border-radius:20px;
     padding:30px;
-    margin:20px auto;
-    max-width:900px;
     box-shadow:0 8px 30px rgba(0,0,0,0.3);
     transition:transform 0.4s, box-shadow 0.4s;
   }
-  .glass-card:hover{transform:scale(1.03); box-shadow:0 15px 50px rgba(0,0,0,0.5);}
-  .glass-card h3{color:#facc15; margin-bottom:15px;}
-  .glass-card p{color:#e2e8f0;}
+  .aglass-card:hover{transform:scale(1.03); box-shadow:0 15px 50px rgba(0,0,0,0.5);}
+  .aglass-card h3{color:#0ff; margin-bottom:15px;}
+  .aglass-card p{color:#e2e8f0;} 
  
   /* Audio Section */
-  .audio-section{ text-align:center;}
-  .audio-section audio{width:80%; max-width:600px; margin-top:20px; border-radius:12px; box-shadow:0 8px 25px rgba(0,0,0,0.4);}
- 
+  /* Audio Grid 4 in One Row */
+.audio-grid{
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:25px;
+  width:90%;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+.audio-card audio{
+  width:100%;
+  margin-top:15px;
+  border-radius:12px;
+  box-shadow:0 8px 25px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .audio-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .audio-grid{
+    grid-template-columns:1fr;
+  }
+}
   /* Video Section */
-  .video-section{ text-align:center;}
-  .video-section video{width:80%; max-width:720px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.4);}
-  .video-section p.transcription-note{margin-top:15px; font-size:1rem; color:#f0f0f0;}
- 
-  /* Image Carousel Section */
-  .image-section{ text-align:center;}
-  .carousel-inner img{height:400px; object-fit:cover; border-radius:12px; transition:transform 0.3s, box-shadow 0.3s;}
+  .video-section{ text-align:center; margin-top:5px}
+  .video-section video{width:90%; max-width:700px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.4);}
+  .video-section p.transcription-note{margin-top:5px; font-size:1rem; color:#f0f0f0;}
+  /* Video Grid */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:25px;
+  width:90%;
+  margin:auto;
+  position:relative;
+  z-index:2;
+}
+
+.video-card video{
+  width:100%;
+  border-radius:12px;
+  margin-top:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+/* Responsive */
+@media(max-width:992px){
+  .video-grid{
+    grid-template-columns:repeat(2, 1fr);
+  }
+}
+
+@media(max-width:600px){
+  .video-grid{
+    grid-template-columns:1fr;
+  }
+}
+
+ .image-row img{
+  height: 260px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+  transition: transform .3s, box-shadow .3s;
+}
+
+.image-row img:hover{
+  transform: scale(1.05);
+  box-shadow: 0 15px 45px rgba(0,0,0,0.5);
+}
+/* Make Carousel Buttons Circular */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255,255,255,0.4);
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+  transition: 0.3s;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+  background: rgba(255, 255, 255, 0.35);
+  box-shadow: 0 0 25px rgba(255,255,255,0.4);
+}
+
+/* Move button slightly inside */
+.carousel-control-prev {
+  left: 15px;
+}
+
+.carousel-control-next {
+  right: 15px;
+}
+
+@media(max-width:768px){
+  .image-row img{
+    height: 200px;
+  }
+}
+
+   
+  .image-section{ text-align:center; }
+  .carousel-inner img{height:400px; object-fit:cover; border-radius:12px; transition:transform 0.3s;}
   .carousel-inner img:hover{transform:scale(1.05); box-shadow:0 12px 35px rgba(0,0,0,0.4);}
+  
  
   /* Responsive */
   @media(max-width:768px){
     .audio-section audio,.video-section video{width:95%;}
     .carousel-inner img{height:250px;}
   }
+  
 </style>
 </head>
 <body>
  
 <canvas id="pointsCanvas"></canvas>
- 
-<!-- Audio Section -->
-<section class="audio-section">
-  <div class="container glass-card">
-    <h2>Audio Sample</h2>
-    <p>Listen to a sample audio file below:</p>
-    <audio controls>
-      <source src="sempal/01.wav" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-</section>
- 
-<!-- Video Section -->
-<section class="video-section">
-  <div class="container glass-card">
-    <h2>Video Sample</h2>
-    <p>Watch a sample video below:</p>
-    <video controls>
-      <source src="sempal/vodeo.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <p class="transcription-note">We also provide professional transcription services for this video and its audio.</p>
-  </div>
-</section>
- 
-<!-- Image Carousel Section -->
-<section class="image-section">
-  <div class="container glass-card">
-    <h2>Image Sample</h2>
-    <p>Here are some unique sample images:</p>
-    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" class="d-block w-100" alt="Sample Image 1">
-        </div>
-        <div class="carousel-item">
-          <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" class="d-block w-100" alt="Sample Image 2">
-        </div>
-        <div class="carousel-item">
-          <img src="https://images.pexels.com/photos/3156381/pexels-photo-3156381.jpeg" class="d-block w-100" alt="Sample Image 3">
-        </div>
-        <div class="carousel-item">
-          <img src="https://images.pexels.com/photos/313081/pexels-photo-313081.jpeg" class="d-block w-100" alt="Sample Image 4">
-        </div>
+
+<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
+        <img src="index image/logo1.png" alt="logo" width="60" height="40" class="me-2">
+        Taarini Infotech
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#about-us">About Us </a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact-us">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="sample.html">Get Sample</a></li>
+        </ul>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    </div>
+    
+
+  </nav>
+<section class="sample-info-section">
+  <div class="sample-info-container aglass-card">
+    
+    <h2 class="sample-title">Our <span>Samples</span></h2>
+
+    <p style="font-size: 20px;">
+      Explore our high-quality dataset samples, including images, audio, text collections, OCR, 
+      and multilingual speech data. Each sample is carefully curated to represent real-world scenarios
+      and maintain top-tier accuracy.
+    </p>
+    <div class="sample-list">
+      <h5><b style="color:#0ff;">Image Samples:</b> High-resolution images collected & annotated for training needs.</h5>
+      <h5><b style="color:#0ff;">Audio Samples:</b> Clear multilingual speech recordings with precise transcription.</h5>
+      <h5><b style="color:#0ff;">Video Samples:</b> Structured video clips processed for behavior & activity analysis.</h5>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- Audio Section -->
+
+<section class="audio-section">
+  <h2>Audio Sample</h2>
+  <div class="audio-grid">
+
+    <!-- Audio Card 1 -->
+    <div class="aglass-card audio-card">
+      <h3>Hindi</h3>
+      <audio controls>
+        <source src="sempal/hindi.wav" type="audio/mpeg">        
+      </audio>
+      <p>मंगल विजय ने आश्चर्य भरी प्रसन्नता से पूछा।</p>
+    </div>
+    <!-- Audio Card 2 -->
+    <div class="aglass-card audio-card">
+      <h3>English</h3>
+      <audio controls>
+        <source src="sempal/english.wav" type="audio/mpeg">
+      </audio>
+      <p>The only difference is the amount of money and the way they get it.</p>
+    </div>
+    <!-- Audio Card 3 -->
+    <div class="aglass-card audio-card">
+      <h3>British English</h3>
+      <audio controls>
+        <source src="sempal/british.wav" type="audio/mpeg">
+      </audio>
+      <p>The scene, actually is much more beautiful than can be put into words.</p>
+    </div>
+    <!-- Audio Card 4 -->
+    <div class="aglass-card audio-card">
+      <h3>Bengali</h3>
+      <audio controls>
+        <source src="sempal/bengali.wav" type="audio/mpeg">
+      </audio>
+      <p>এডি আভিলা রাইজিং ভয়েসেসএর ডিরেক্টর তিনি সম্প্রতি পশ্চিম আফ্রিকার গিনি বিসাউ ভ্রমণ করে এসেছেন</p>
+    </div>
+    <!-- Next Row -->
+    <div class="aglass-card audio-card">
+      <h3>Gujrati</h3>
+      <audio controls>
+        <source src="sempal/gujrati.wav" type="audio/mpeg">
+      </audio>
+      <p>કારણ કે એ ભવિષ્યવાણી ફરતે બાઇબલનો આખો વિષય રચાયેલો છે</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Kannada</h3>
+      <audio controls>
+        <source src="sempal/kannada.wav" type="audio/mpeg">
+      </audio>
+      <p>ಆದದರಿಂದ ನೀವು ನಿಮ್ಮನ್ನು ಶುದ್ಧಪಡಿಸಿಕೊಂಡು ಪರಿಶುದ್ಧರಾಗಿರಿ ನಿಮ್ಮ ದೇವರಾಗಿರುವ ಕರ್ತನು ನಾನೇ</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Malayalam</h3>
+      <audio controls>
+        <source src="sempal/malayalam.wav" type="audio/mpeg">
+      </audio>
+      <p>ദൈവവചനവുമായി പരിചയത്തിലാകുന്നതിൽ എന്തൊക്കെ ഉൾപ്പെട്ടിരിക്കുന്നു</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Marathi</h3>
+      <audio controls>
+        <source src="sempal/marathi.wav" type="audio/mpeg">
+      </audio>
+      <p>तसंच शांती शोधण्यासाठी तिचं अवलंबन करण्यासाठी ते प्रेरित होतात स्तो</p>
+    </div>
+ <div class="aglass-card audio-card">
+      <h3>Odia</h3>
+      <audio controls>
+        <source src="sempal/odia.wav" type="audio/mpeg">
+      </audio>
+      <p>ଆଗାମୀ ଦିନରେ ଆମର ମୈତ୍ରୀ ଓ ଅଂଶୀଦାରୀ ଆହୁରି ଉଚ୍ଚକୁ ଯିବା ବିଧି ନିର୍ଦ୍ଦିଷ୍ଟ</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Punjabi</h3>
+      <audio controls>
+        <source src="sempal/punjabi.wav" type="audio/mpeg">
+      </audio>
+      <p>ਯਹੋਵਾਹ ਨੇ ਕਿਹੜਾ ਵਧੀਆ ਵਾਅਦਾ ਕੀਤਾ ਸੀ ਅਤੇ ਇਹ ਪੂਰਾ ਕਿਵੇਂ ਹੋਇਆ ਹੈ</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Tamil</h3>
+      <audio controls>
+        <source src="sempal/tamil.wav" type="audio/mpeg">
+      </audio>
+      <p>அவர்கள் அந்த வாகனத்தைப் பார்த்த மாத்திரத்தில் ஓடிவந்து தங்களை சாட்சிகள் என அறிமுகப்படுத்தினார்கள்</p>
+    </div>
+    <div class="aglass-card audio-card">
+      <h3>Assamese</h3>
+      <audio controls>
+        <source src="sempal/Assamese.wav" type="audio/mpeg">        
+      </audio>
+      <p>পৰীক্ষা বা পৰ্যবেক্ষণৰ ওপৰত আধাৰিত কৰি পৰিসাংখ্যিক আৰু গাণিতিক তথ্য ব্যৱহাৰ কৰি কৰা এক বিশ্লেষণ</p>
     </div>
   </div>
 </section>
+
+<!-- Video Section -->
+
+<section class="video-section"> 
+  <h2>Video Sample</h2>
+  <div class="video-grid">
+   
+    <!-- Video Card 1 -->
+    <div class="aglass-card video-card">
+      <h3>Video 01</h3>
+      <video controls>
+        <source src="sempal/video1.mp4" type="video/mp4">
+      </video>
+      <p class="transcription-note">We provide transcription for this video.</p>
+    </div>
+    <!-- Video Card 2 -->
+    <div class="aglass-card video-card">
+      <h3>Video 02</h3>
+      <video controls>
+        <source src="sempal/video2.mp4" type="video/mp4">
+      </video>
+      <p class="transcription-note">We provide transcription for this video.</p>
+   </div>
+    <!-- Video Card 3 -->
+    <div class="aglass-card video-card">
+      <h3>Video 03</h3>
+      <video controls>
+        <source src="sempal/video3.mp4" type="video/mp4">
+      </video>
+      <p class="transcription-note">We provide transcription for this video.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Image Carousel Section -->
+<section class="image-section">
  
+  <div class="container glass-card">
+    
+   <h2>Image Sample</h2>
+    <p>Here are some unique sample images:</p>
+    <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row g-3 image-row">
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg" class="d-block w-100" alt="">
+            </div>
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/210186/pexels-photo-210186.jpeg" class="d-block w-100" alt="">
+            </div>
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/3156381/pexels-photo-3156381.jpeg" class="d-block w-100" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row g-3 image-row">
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/313081/pexels-photo-313081.jpeg" class="d-block w-100" alt="">
+            </div>
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/2014422/pexels-photo-2014422.jpeg" class="d-block w-100" alt="">
+            </div>
+            <div class="col-md-4">
+              <img src="https://images.pexels.com/photos/3408744/pexels-photo-3408744.jpeg" class="d-block w-100" alt="">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controls -->
+      <button class="carousel-control-prev rang" type="button" data-bs-target="#imageCarousel" data-bs-slide="prev" >
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next rang" type="button" data-bs-target="#imageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+
+   <footer id="contact" class="footer-section text-white pt-5 pb-4">
+    <div class="container">
+      <div class="row text-center text-md-start">
+        <div class="col-md-4 mb-4">
+          <h4 class="footer-title">Taarini Infotech</h4>
+          <p class="text-secondary small mt-3">
+            Languages worked on- Indian regional languages, Indian English, US English, UK English, Urdu, Arabic <br>
+           Country worked for: India, USA, UK, UAE, China, Japan, Germany, Canada, Istanbul, Portugal, Russia, Spain
+          </p>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-subtitle">Quick Links</h5>
+          <ul class="list-unstyled mt-3">
+            <li><a href="#home" class="footer-link">About Us</a></li>
+            <li><a href="#about" class="footer-link">Service</a></li>
+            <li><a href="#projects" class="footer-link">Projects</a></li>
+            <li><a href="#contact" class="footer-link">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-md-4 mb-4">
+          <h5 class="footer-subtitle">Contact Info</h5>
+          <ul class="list-unstyled mt-3 small text-secondary">
+            <li><i class="bi bi-geo-alt-fill me-2 text-primary"></i>Dewas-Indore, MP, India</li>
+            <li><i class="bi bi-envelope-fill me-2 text-primary"></i>info@taariniinfotech.com</li>
+            <li><i class="bi bi-phone-fill me-2 text-primary"></i>+91 8817460071</li>
+          </ul>
+          <a href="#contact-us" class="btn btn-success mt-3">Contact Us</a>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <a href="" class="footer-icon me-3"><i class="bi bi-facebook"></i></a>
+        <a href="https://www.linkedin.com/company/taarini-infotech-llp/" class="footer-icon me-3"><i class="bi bi-linkedin"></i></a>
+        <a href="#" class="footer-icon me-3"><i class="bi bi-whatsapp"></i></a>
+      </div>
+
+      <div class="text-center mt-4 border-top border-secondary pt-3">
+        <p class="small mb-0 text-secondary">
+          © 2025 <span class="text-success fw-semibold">Taarini Infotech</span> | All Rights Reserved
+        </p>
+      </div>
+    </div>
+  </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
   // Canvas Points Background Animation
@@ -168,6 +520,7 @@
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
   });
+  
 </script>
 </body>
 </html>
