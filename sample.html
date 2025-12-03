@@ -3,10 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sample</title>
+<title>Taarini Infotech Sample</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
-<link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="index image/logo1.png">
 <style>
   *
   {
@@ -35,7 +36,7 @@
     content:""; position:absolute; top:0; left:0; width:100%; height:100%;
     background:transparent; z-index:1;
   }
-  .container{position:relative; z-index:2;}
+  .ccontainer{position:relative; z-index:2;}
  
   /* Canvas Points Background */
   #pointsCanvas{
@@ -190,35 +191,49 @@
     .audio-section audio,.video-section video{width:95%;}
     .carousel-inner img{height:250px;}
   }
-  
+  .chat-text {
+  font-size: 16px;
+  line-height: 1.6;
+  position: relative;
+}
+
+.full-text {
+  display: none;
+}
+
+.read-more-btn {
+  color: #0ff;
+  cursor: pointer;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
 </style>
 </head>
 <body>
  
 <canvas id="pointsCanvas"></canvas>
-
-<nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top shadow-sm">
+ <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold d-flex align-items-center" href="#">
         <img src="index image/logo1.png" alt="logo" width="60" height="40" class="me-2">
         Taarini Infotech
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+    <span class="navbar-toggler-icon"></span>
+</button>
+     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link active" href="#about-us">About Us </a></li>
-          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact-us">Contact</a></li>
+          <li class="nav-item"><a class="nav-link active" href="index.html#about-us">About Us </a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html#contact-us">Contact</a></li>
           <li class="nav-item"><a class="nav-link" href="sample.html">Get Sample</a></li>
         </ul>
       </div>
     </div>
-    
-
   </nav>
+
 <section class="sample-info-section">
   <div class="sample-info-container aglass-card">
     
@@ -239,35 +254,40 @@
 </section>
 
 
-
-
-
-
-
-
-
-
-
 <!-- Audio Section -->
 
 <section class="audio-section">
-  <h2>Audio Sample</h2>
+  <h2>Audio</h2>
   <div class="audio-grid">
 
     <!-- Audio Card 1 -->
        <div class="aglass-card audio-card">
       <h3>Pair recording</h3>
       <audio controls>
-        <source src="sempal/.wav" type="audio/mpeg">
+        <source src="sempal/pair.wav" type="audio/mpeg">
       </audio>
-      <p>pair</p>
+     <p class="chat-text">
+  <span class="short-text">
+    <b>Speaker 1 -</b> हैलो श्रुति क्या तुम शाम को फ्री हो? <br>
+    <span class="dots">...</span>
+  </span>
+
+  <span class="full-text">
+    <b>Speaker 2-</b> हाँ मैं फ्री हूँ बोलो <br>
+    <b>Speaker 1-</b> मुझे थोड़ा मार्केट जाना था क्या तुम साथ में चलोगी <br>
+    <b>Speaker 2-</b> हाँ बिल्कुल हम चलते हैं और शाम को हम थोड़ा सा पार्क वगैरह में घूम कर आएंगे और वहाँ पर कुछ बैठ कर खा भी लेंगे <br>
+    <b>Speaker 1-</b>हाँ बिल्कुल <br>
+  </span>
+
+  <span class="read-more-btn">Read More</span>
+</p>
     </div>
     <div class="aglass-card audio-card">
       <h3>Hindi</h3>
       <audio controls>
         <source src="sempal/hindi.wav" type="audio/mpeg">        
       </audio>
-      <p>मंगल विजय ने आश्चर्य भरी प्रसन्नता से पूछा।</p>
+      <p>राशि ने दरवाजा खोला और चौंक गई।</p>
     </div>
     <!-- Audio Card 2 -->
     <div class="aglass-card audio-card">
@@ -275,7 +295,7 @@
       <audio controls>
         <source src="sempal/english.wav" type="audio/mpeg">
       </audio>
-      <p>The only difference is the amount of money and the way they get it.</p>
+      <p>I am gonna do my work today.</p>
     </div>
     <!-- Audio Card 3 -->
   
@@ -350,14 +370,14 @@
 <!-- Video Section -->
 
 <section class="video-section"> 
-  <h2>Video Sample</h2>
+  <h2>Video </h2>
   <div class="video-grid">
    
     <!-- Video Card 1 -->
     <div class="aglass-card video-card">
       <h3>Video 01</h3>
       <video controls>
-        <source src="sempal/video1.mp4" type="video/mp4">
+        <source src="sempal/video1.hic" type="video/mp4">
       </video>
       <p class="transcription-note">We provide transcription for this video.</p>
     </div>
@@ -383,9 +403,9 @@
 <!-- Image Carousel Section -->
 <section class="image-section">
  
-  <div class="container glass-card">
+  <div class="ccontainer glass-card">
     
-   <h2>Image Sample</h2>
+   <h2>Image </h2>
     <p>Here are some unique sample images:</p>
     <div id="imageCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2500">
       <div class="carousel-inner">
@@ -435,7 +455,7 @@
 
 
    <footer id="contact" class="footer-section text-white pt-5 pb-4">
-    <div class="container">
+    <div class="ccontainer">
       <div class="row text-center text-md-start">
         <div class="col-md-4 mb-4">
           <h4 class="footer-title">Taarini Infotech</h4>
@@ -448,10 +468,10 @@
         <div class="col-md-4 mb-4">
           <h5 class="footer-subtitle">Quick Links</h5>
           <ul class="list-unstyled mt-3">
-            <li><a href="#home" class="footer-link">About Us</a></li>
-            <li><a href="#about" class="footer-link">Service</a></li>
-            <li><a href="#projects" class="footer-link">Projects</a></li>
-            <li><a href="#contact" class="footer-link">Contact</a></li>
+            <li><a href="index.html#home" class="footer-link">About Us</a></li>
+            <li><a href="index.html#about" class="footer-link">Service</a></li>
+            <li><a href="index.html#projects" class="footer-link">Projects</a></li>
+            <li><a href="index.html#contact" class="footer-link">Contact</a></li>
           </ul>
         </div>
 
@@ -462,7 +482,7 @@
             <li><i class="bi bi-envelope-fill me-2 text-primary"></i>info@taariniinfotech.com</li>
             <li><i class="bi bi-phone-fill me-2 text-primary"></i>+91 8817460071</li>
           </ul>
-          <a href="#contact-us" class="btn btn-success mt-3">Contact Us</a>
+          <a href="index.html#contact-us" class="btn btn-success mt-3">Contact Us</a>
         </div>
       </div>
 
@@ -480,6 +500,8 @@
     </div>
   </footer>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
   // Canvas Points Background Animation
   const canvas = document.getElementById('pointsCanvas');
@@ -521,7 +543,21 @@
     w = canvas.width = window.innerWidth;
     h = canvas.height = window.innerHeight;
   });
-  
+  const btn = document.querySelector(".read-more-btn");
+  const fullText = document.querySelector(".full-text");
+  const dots = document.querySelector(".dots");
+
+  btn.addEventListener("click", () => {
+    if (fullText.style.display === "none") {
+      fullText.style.display = "inline";
+      dots.style.display = "none";
+      btn.textContent = "Read Less";
+    } else {
+      fullText.style.display = "none";
+      dots.style.display = "inline";
+      btn.textContent = "Read More";
+    }
+  });
 </script>
 </body>
 </html>
