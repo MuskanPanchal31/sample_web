@@ -232,10 +232,15 @@ body {
   justify-content: center;
   flex-wrap: wrap;
   margin-top: 20px;
- border-radius: 10px;
- border: #000;
+  border-radius: 10px;
+  border: #000;
+ 
 }
 
+.about-achievement{
+  border: black;
+   border-radius: 5px;
+}
 .about-achievement h2 {
   font-size: 28px;
   color: #0d6efd;
