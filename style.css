@@ -77,12 +77,35 @@ body {
   position: relative;
   z-index: 2;
 }
-
-#hero h1 {
-  font-size: 2.8rem;
+#hero-title {
+  font-size: 3rem;
   margin-bottom: 1rem;
   animation: fadeUp 1s ease forwards;
+  font-weight: 700;
+  line-height: 1.3;
 }
+
+/* Both lines get color animation */
+.line {
+  display: inline-block;
+  animation: colorRotate 4s infinite ease-in-out;
+  font-weight: 800;
+}
+
+/* Color rotation animation */
+@keyframes colorRotate {
+  0%   { color: #4dd5ff; }   /* red */
+  33%  { color: #6ba6ff; }   /* blue */
+  66%  { color: #8fffa9; }   /* green */
+  100% { color: #ee82ff; }
+}
+
+/* First appearance animation */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 
 #hero h1 span {
   color: #00d4ff;
